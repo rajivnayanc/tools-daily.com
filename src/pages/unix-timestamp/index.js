@@ -482,6 +482,7 @@ function showError(element, message) {
     }, { once: true });
 }
 
+let toastContainer;
 /**
  * Show toast notification
  * @param {string} message - Toast message
@@ -489,8 +490,7 @@ function showError(element, message) {
  */
 function showToast(message, type = 'success') {
     // Check if toast container exists, if not create it
-    let toastContainer = document.querySelector('.toast-container');
-    if (!toastContainer) {
+    if (!document.querySelector('.toast-container')) {
         toastContainer = document.createElement('div');
         toastContainer.className = 'toast-container';
         toastContainer.setAttribute('role', 'status');
@@ -562,7 +562,7 @@ const init = () => {
 const Page = () => {
     useEffect(() => {
         init();
-    })
+    }, [])
     return (
         <>
             <Head>

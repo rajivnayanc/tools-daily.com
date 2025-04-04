@@ -55,7 +55,7 @@
 }
 
 /* Colors for added and removed text */
-:root {
+.root {
   --diff-add-color: #d4edda;   /* Light green for added text */
   --diff-remove-color: #f8d7da; /* Light red for removed text */
 }

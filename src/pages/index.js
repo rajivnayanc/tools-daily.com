@@ -4,6 +4,35 @@ import { faArrowRight, faClock, faCode, faExchangeAlt, faFont, faSearch } from "
 import Head from "next/head";
 import Link from "next/link";
 
+let toastContainer; // Declare toastContainer outside the function
+
+function showToast(message, type = 'success') {
+  // Check if toast container exists, if not create it
+  if (!document.querySelector('.toast-container')) {
+    toastContainer = document.createElement('div');
+    toastContainer.className = 'toast-container';
+    toastContainer.setAttribute('role', 'status');
+    toastContainer.setAttribute('aria-live', 'polite');
+    document.body.appendChild(toastContainer);
+  }
+
+  // Create toast element
+  const toast = document.createElement('div');
+  toast.className = `toast ${type}`;
+  toast.textContent = message;
+
+  // Add toast to container
+  toastContainer.appendChild(toast);
+
+  // Remove toast after 3 seconds
+  setTimeout(() => {
+    toast.classList.add('hide');
+    setTimeout(() => {
+      toast.remove();
+    }, 3000);
+  }, 3000);
+}
+
 const initSearchFunctionality = () => {
   const searchInput = document.getElementById('search-tools');
   const searchButton = document.getElementById('search-button');
@@ -15,15 +44,21 @@ const initSearchFunctionality = () => {
     { name: 'Unix Timestamp Converter', url: 'unix-timestamp', category: 'Date & Time' },
     { name: 'Date Difference Calculator', url: 'date-difference', category: 'Date & Time' },
     { name: 'World Clock', url: 'world-clock', category: 'Date & Time' },
+    { name: 'Time Zone Converter', url: 'timezone-converter', category: 'Date & Time' },
     { name: 'Case Converter', url: 'case-converter', category: 'Text Tools' },
     { name: 'Text Diff Checker', url: 'text-diff', category: 'Text Tools' },
     { name: 'Character Count', url: 'character-count', category: 'Text Tools' },
+    { name: 'Lorem Ipsum Generator', url: 'lorem-ipsum', category: 'Text Tools' },
     { name: 'Unit Converter', url: 'unit-converter', category: 'Converters' },
     { name: 'Base64 Encoder/Decoder', url: 'base64-encoder', category: 'Encoders & Decoders' },
     { name: 'JSON Formatter', url: 'json-formatter', category: 'Developer Tools' },
     { name: 'HTML Encoder/Decoder', url: 'html-encoder', category: 'Encoders & Decoders' },
     { name: 'CSS Minifier', url: 'css-minifier', category: 'Developer Tools' },
-    { name: 'Color Picker', url: 'color-picker', category: 'Design Tools' }
+    { name: 'Color Picker', url: 'color-picker', category: 'Design Tools' },
+    { name: 'Number Base Converter', url: 'number-base-converter', category: 'Converters' },
+    { name: 'Password Generator', url: 'password-generator', category: 'Utilities' },
+    { name: 'Image Compressor', url: 'image-compressor', category: 'Utilities' },
+    { name: 'Markdown Editor', url: 'markdown-editor', category: 'Utilities' },
   ];
 
   // Handle search button click
@@ -58,7 +93,7 @@ const initSearchFunctionality = () => {
       window.location.href = matches[0].url;
     } else {
       // No matches found
-      showToast('No matching tools found. Try a different search term.', 'warning');
+      showToast('No matching tools found. Try a different search term.', "error");
     }
   }
 }
@@ -70,7 +105,7 @@ const init = () => {
 export default function Home() {
   useEffect(() => {
     init();
-  });
+  }, []);
   return (
     <>
       <Head>

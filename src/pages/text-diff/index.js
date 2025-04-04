@@ -28,7 +28,7 @@ export default function TextDiff() {
         <meta name="description" content="Compare two texts and highlight the differences." />
         <meta name="keywords" content="text diff, text comparison, compare text, difference checker" />
       </Head>
-      <main>
+      <main className={styles.root}>
         <div className="container">
           <h1>Text Diff Checker</h1>
           <p>Enter two texts to compare and highlight the differences.</p>
