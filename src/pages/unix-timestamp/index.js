@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 import Head from "next/head";
@@ -84,7 +84,14 @@ function initUnixTimestampTool() {
                 return;
             }
 
-            convertUnixToDate(timestamp);
+            let timestampType = 'seconds';
+            if (String(timestamp).length === 13) {
+                timestampType = 'milliseconds';
+            } else if (String(timestamp).length > 13) {
+                timestampType = 'nanoseconds';
+            }
+
+            convertUnixToDate(timestamp, timestampType);
 
             // Update URL with the timestamp for bookmarking
             updateUrlWithTimestamp(timestamp);
@@ -237,10 +244,22 @@ function updateCurrentTimestamp() {
 
 /**
  * Convert Unix timestamp to human-readable date
- * @param {number} timestamp - Unix timestamp in seconds
+ * @param {number} timestamp - Unix timestamp
+ * @param {string} timestampType - Type of timestamp (seconds, milliseconds, nanoseconds)
  */
-function convertUnixToDate(timestamp) {
-    const date = new Date(timestamp * 1000);
+function convertUnixToDate(timestamp, timestampType) {
+    let date;
+    switch (timestampType) {
+        case 'milliseconds':
+            date = new Date(timestamp);
+            break;
+        case 'nanoseconds':
+            date = new Date(timestamp / 1000000);
+            break;
+        default: // seconds
+            date = new Date(timestamp * 1000);
+            break;
+    }
 
     // UTC date
     const utcString = date.toUTCString();
@@ -257,7 +276,14 @@ function convertUnixToDate(timestamp) {
     }
 
     // Relative time
-    const relativeTime = getRelativeTimeString(timestamp * 1000);
+    let relativeTime;
+    if (timestampType === 'seconds') {
+        relativeTime = getRelativeTimeString(timestamp * 1000);
+    } else if (timestampType === 'milliseconds') {
+        relativeTime = getRelativeTimeString(timestamp);
+    } else {
+        relativeTime = getRelativeTimeString(timestamp / 1000000);
+    }
     const relativeDateEl = document.getElementById('relative-date');
     if (relativeDateEl) {
         relativeDateEl.textContent = relativeTime;
@@ -265,6 +291,12 @@ function convertUnixToDate(timestamp) {
 
     // Update page title with the timestamp info for better SEO
     document.title = `Unix Timestamp ${timestamp} - ${utcString} | DailyTools`;
+
+    // Display timestamp type
+    const timestampTypeEl = document.getElementById('timestamp-type');
+    if (timestampTypeEl) {
+        timestampTypeEl.textContent = timestampType;
+    }
 }
 
 /**
@@ -561,7 +593,8 @@ const init = () => {
 
 const Page = () => {
     useEffect(() => {
-        init();
+        initUnixTimestampTool();
+        initPopularTimestamps();
     }, [])
     return (
         <>
@@ -637,7 +670,7 @@ const Page = () => {
                                         <h3>Convert Unix Timestamp to Date</h3>
                                         <div className="input-group">
                                             <label htmlFor="unix-input" className="sr-only">Enter Unix timestamp</label>
-                                            <input type="number" id="unix-input" placeholder="Enter Unix timestamp" aria-describedby="unix-input-help" />
+                                            <input type="text" id="unix-input" placeholder="Enter Unix timestamp" aria-describedby="unix-input-help" />
                                             <button id="convert-to-date" className="btn">Convert</button>
                                         </div>
                                         <p id="unix-input-help" className="sr-only">Enter a Unix timestamp in seconds to convert to a human-readable date</p>
@@ -653,6 +686,10 @@ const Page = () => {
                                             <div className="result-item">
                                                 <span className="result-label">Relative:</span>
                                                 <span className="result-value" id="relative-date">-</span>
+                                            </div>
+                                            <div className="result-item">
+                                                <span className="result-label">Timestamp Type:</span>
+                                                <span className="result-value" id="timestamp-type">-</span>
                                             </div>
                                         </div>
                                     </section>
