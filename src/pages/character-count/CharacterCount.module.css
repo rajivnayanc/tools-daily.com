@@ -1,0 +1,28 @@
+.input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: var(--background-secondary-color);
+  color: var(--text-primary-color);
+  margin-bottom: 1.5rem;
+  min-height: 120px;
+  resize: vertical;
+}
+
+.results {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: var(--text-primary-color);
+}
+
+.results p {
+  margin-bottom: 0.8rem;
+}
+
+.count {
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-left: 0.3rem;
+}

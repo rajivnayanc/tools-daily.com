@@ -12,22 +12,22 @@ const initSearchFunctionality = () => {
 
   // Tool data - this would ideally come from a database or JSON file
   const tools = [
-    { name: 'Unix Timestamp Converter', url: 'unix-timestamp.html', category: 'Date & Time' },
-    { name: 'Date Difference Calculator', url: 'date-difference.html', category: 'Date & Time' },
-    { name: 'World Clock', url: 'world-clock.html', category: 'Date & Time' },
-    { name: 'Case Converter', url: 'case-converter.html', category: 'Text Tools' },
-    { name: 'Text Diff Checker', url: 'text-diff.html', category: 'Text Tools' },
-    { name: 'Character Count', url: 'character-count.html', category: 'Text Tools' },
-    { name: 'Unit Converter', url: 'unit-converter.html', category: 'Converters' },
-    { name: 'Base64 Encoder/Decoder', url: 'base64-encoder.html', category: 'Encoders & Decoders' },
-    { name: 'JSON Formatter', url: 'json-formatter.html', category: 'Developer Tools' },
-    { name: 'HTML Encoder/Decoder', url: 'html-encoder.html', category: 'Encoders & Decoders' },
-    { name: 'CSS Minifier', url: 'css-minifier.html', category: 'Developer Tools' },
-    { name: 'Color Picker', url: 'color-picker.html', category: 'Design Tools' }
+    { name: 'Unix Timestamp Converter', url: 'unix-timestamp', category: 'Date & Time' },
+    { name: 'Date Difference Calculator', url: 'date-difference', category: 'Date & Time' },
+    { name: 'World Clock', url: 'world-clock', category: 'Date & Time' },
+    { name: 'Case Converter', url: 'case-converter', category: 'Text Tools' },
+    { name: 'Text Diff Checker', url: 'text-diff', category: 'Text Tools' },
+    { name: 'Character Count', url: 'character-count', category: 'Text Tools' },
+    { name: 'Unit Converter', url: 'unit-converter', category: 'Converters' },
+    { name: 'Base64 Encoder/Decoder', url: 'base64-encoder', category: 'Encoders & Decoders' },
+    { name: 'JSON Formatter', url: 'json-formatter', category: 'Developer Tools' },
+    { name: 'HTML Encoder/Decoder', url: 'html-encoder', category: 'Encoders & Decoders' },
+    { name: 'CSS Minifier', url: 'css-minifier', category: 'Developer Tools' },
+    { name: 'Color Picker', url: 'color-picker', category: 'Design Tools' }
   ];
 
   // Handle search button click
-  searchButton.addEventListener('click', function () {
+  searchButton.addEventListener('click', function (e) {
     performSearch();
   });
 
@@ -106,10 +106,10 @@ export default function Home() {
               <h2>Free Online Tools for Everyday Tasks</h2>
               <p>Simple, fast, and reliable utilities to help you with your daily work. No ads, no signup required.</p>
               <div className="search-container">
-                <form action="/" method="get">
-                  <input type="text" name="q" placeholder="Search for a tool..." aria-label="Search for a tool" />
-                  <button type="submit" aria-label="Search"><i><FontAwesomeIcon icon={faSearch} /></i></button>
-                </form>
+                <div className="form">
+                  <input id="search-tools" type="text" name="q" placeholder="Search for a tool..." aria-label="Search for a tool" />
+                  <button id="search-button" aria-label="Search"><i><FontAwesomeIcon icon={faSearch} /></i></button>
+                </div>
               </div>
             </div>
           </section>

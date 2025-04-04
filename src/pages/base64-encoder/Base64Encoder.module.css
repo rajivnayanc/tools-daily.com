@@ -1,0 +1,49 @@
+.input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: var(--background-secondary-color);
+  color: var(--text-primary-color);
+  margin-bottom: 1.5rem;
+  min-height: 120px;
+  resize: vertical;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  padding: 0.7rem 1.2rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.button:hover {
+  background-color: var(--primary-dark-color);
+}
+
+.result {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: var(--text-primary-color);
+}
+
+.convertedText {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background-color: var(--background-secondary-color);
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}

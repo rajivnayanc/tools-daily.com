@@ -787,6 +787,11 @@ const Page = () => {
                                 </div>
 
                                 <div className="faq-item">
+                                    <h4>What is the Year 2038 problem?</h4>
+                                    <p>It refers to the time when 32-bit signed Unix timestamps (counting seconds) will overflow, potentially causing issues on older systems. Systems using 64-bit timestamps are not affected.</p>
+                                </div>
+
+                                <div className="faq-item">
                                     <h4>How can I get the Unix timestamp in different programming languages?</h4>
                                     <p>Here are examples in common programming languages:</p>
                                     <ul>

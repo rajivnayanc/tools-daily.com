@@ -1,0 +1,43 @@
+.dateInputContainer {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.dateInput {
+  width: 200px;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: var(--background-secondary-color);
+  color: var(--text-primary-color);
+}
+
+.calculateButton {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.calculateButton:hover {
+  background-color: var(--primary-dark-color);
+}
+
+.result {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text-primary-color);
+}

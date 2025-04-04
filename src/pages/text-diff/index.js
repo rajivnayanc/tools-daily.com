@@ -1,0 +1,88 @@
+import Head from 'next/head';
+import { useState } from 'react';
+import { diffChars } from 'diff';
+import styles from './TextDiff.module.css';
+
+export default function TextDiff() {
+  const [text1, setText1] = useState('');
+  const [text2, setText2] = useState('');
+  const [diff, setDiff] = useState([]);
+
+  const handleText1Change = (event) => {
+    setText1(event.target.value);
+  };
+
+  const handleText2Change = (event) => {
+    setText2(event.target.value);
+  };
+
+  const compareTexts = () => {
+    const changes = diffChars(text1, text2);
+    setDiff(changes);
+  };
+
+  return (
+    <>
+      <Head>
+        <title>Text Diff Checker - DailyTools</title>
+        <meta name="description" content="Compare two texts and highlight the differences." />
+        <meta name="keywords" content="text diff, text comparison, compare text, difference checker" />
+      </Head>
+      <main>
+        <div className="container">
+          <h1>Text Diff Checker</h1>
+          <p>Enter two texts to compare and highlight the differences.</p>
+
+          <div className={styles.textContainer}>
+            <label htmlFor="text1" className={styles.label}>Text 1:</label>
+            <textarea
+              id="text1"
+              className={styles.input}
+              placeholder="Enter the first text here"
+              value={text1}
+              onChange={handleText1Change}
+            />
+          </div>
+
+          <div className={styles.textContainer}>
+            <label htmlFor="text2" className={styles.label}>Text 2:</label>
+            <textarea
+              id="text2"
+              className={styles.input}
+              placeholder="Enter the second text here"
+              value={text2}
+              onChange={handleText2Change}
+            />
+          </div>
+
+          <button onClick={compareTexts} className={styles.compareButton}>
+            Compare Texts
+          </button>
+
+          <div className={styles.result}>
+            {diff.length > 0 && (
+              <div>
+                <strong>Differences:</strong>
+                <div className={styles.diffOutput}>
+                  {diff.map((part, index) => {
+                    const spanStyle = part.added
+                      ? { backgroundColor: 'var(--diff-add-color)' }
+                      : part.removed
+                      ? { backgroundColor: 'var(--diff-remove-color)' }
+                      : {};
+
+                    return (
+                      <span key={index} style={spanStyle}>
+                        {part.value}
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </main>
+    </>
+  );
+}

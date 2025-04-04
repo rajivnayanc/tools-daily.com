@@ -1,0 +1,172 @@
+.regexInputContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: var(--background-secondary-color);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.regexDelimiter {
+  font-size: 1.2rem;
+  color: var(--text-secondary-color);
+  margin: 0 0.3rem;
+}
+
+.regexInput {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: var(--text-primary-color);
+}
+
+.flagsInput {
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 80px; /* Fixed width for flags */
+  text-align: center;
+  background-color: transparent;
+  color: var(--text-primary-color);
+}
+
+.testStringContainer {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.testTextarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: var(--background-secondary-color);
+  color: var(--text-primary-color);
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.resultsContainer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.resultsContainer h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.highlightedTextContainer,
+.matchListContainer {
+  margin-bottom: 2rem;
+}
+
+.highlightedTextContainer h3,
+.matchListContainer h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.highlightedText {
+  background-color: var(--background-secondary-color);
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  white-space: pre-wrap; /* Wrap long lines */
+  word-wrap: break-word; /* Break long words */
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-primary-color);
+}
+
+.highlight {
+  background-color: var(--highlight-background-color, #f0e68c); /* Khaki as default highlight */
+  color: var(--highlight-text-color, #333); /* Dark text on highlight */
+  padding: 0.1em 0.2em;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.matchList {
+  list-style: none;
+  padding: 0;
+}
+
+.matchItem {
+  background-color: var(--background-secondary-color);
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+}
+
+.matchIndex {
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: var(--primary-color);
+}
+
+.matchCode {
+  background-color: var(--code-background-color, #e8e8e8); /* Slightly different background for code snippets */
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  color: var(--code-text-color, #333);
+}
+
+.matchPosition {
+  font-size: 0.85rem;
+  color: var(--text-secondary-color);
+  margin-left: 0.5rem;
+}
+
+.captureGroups {
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed var(--border-color);
+}
+
+.captureGroups strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary-color);
+}
+
+.captureGroups ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.captureGroups li {
+  margin-bottom: 0.3rem;
+}
+
+.error {
+  color: var(--error-color);
+  background-color: var(--error-background-color);
+  padding: 0.8rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--error-border-color);
+  font-family: var(--font-mono);
+}

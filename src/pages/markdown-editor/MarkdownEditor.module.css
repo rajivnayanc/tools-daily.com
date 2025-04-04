@@ -1,0 +1,178 @@
+.editorLayout {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  min-height: 60vh; /* Ensure panes have a decent height */
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  overflow: hidden; /* Contain children */
+}
+
+.editorPane,
+.previewPane {
+  flex: 1; /* Each pane takes half the width */
+  display: flex; /* Use flex for internal alignment */
+  flex-direction: column; /* Stack elements vertically */
+  overflow-y: auto; /* Allow scrolling within panes if content overflows */
+}
+
+.editorPane {
+  border-right: 1px solid var(--border-color);
+}
+
+.editorTextarea {
+  flex-grow: 1; /* Textarea fills the available space in the pane */
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  resize: none; /* Disable manual resizing */
+  font-family: var(--font-mono); /* Use monospace font for code */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  background-color: var(--background-secondary-color);
+  color: var(--text-primary-color);
+}
+
+.previewPane {
+  background-color: var(--background-color);
+}
+
+.markdownPreview {
+  padding: 1rem;
+  flex-grow: 1; /* Preview area fills the available space */
+  line-height: 1.7;
+  color: var(--text-primary-color);
+}
+
+/* Basic styling for Markdown elements */
+.markdownPreview h1,
+.markdownPreview h2,
+.markdownPreview h3,
+.markdownPreview h4,
+.markdownPreview h5,
+.markdownPreview h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+  color: var(--text-heading-color); /* Use a specific heading color if defined */
+}
+
+.markdownPreview h1 { font-size: 2em; border-bottom: 1px solid var(--border-color); padding-bottom: 0.3em; }
+.markdownPreview h2 { font-size: 1.6em; border-bottom: 1px solid var(--border-color); padding-bottom: 0.3em; }
+.markdownPreview h3 { font-size: 1.3em; }
+.markdownPreview h4 { font-size: 1.1em; }
+
+.markdownPreview p {
+  margin-bottom: 1em;
+}
+
+.markdownPreview a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.markdownPreview a:hover {
+  text-decoration: underline;
+}
+
+.markdownPreview code {
+  font-family: var(--font-mono);
+  background-color: var(--background-secondary-color);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 85%;
+}
+
+.markdownPreview pre {
+  background-color: var(--background-secondary-color);
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto; /* Allow horizontal scrolling for long code lines */
+  margin-bottom: 1em;
+}
+
+.markdownPreview pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit; /* Inherit font size from pre */
+}
+
+.markdownPreview blockquote {
+  border-left: 4px solid var(--border-color);
+  padding-left: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  color: var(--text-secondary-color);
+  margin-bottom: 1em;
+}
+
+.markdownPreview ul,
+.markdownPreview ol {
+  padding-left: 2em;
+  margin-bottom: 1em;
+}
+
+.markdownPreview li {
+  margin-bottom: 0.4em;
+}
+
+.markdownPreview table {
+  border-collapse: collapse;
+  margin-bottom: 1em;
+  width: auto; /* Or 100% if you prefer full-width tables */
+  border: 1px solid var(--border-color);
+}
+
+.markdownPreview th,
+.markdownPreview td {
+  border: 1px solid var(--border-color);
+  padding: 0.6em 1em;
+  text-align: left;
+}
+
+.markdownPreview th {
+  background-color: var(--background-secondary-color);
+  font-weight: 600;
+}
+
+.markdownPreview img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.markdownPreview hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 2em 0;
+}
+
+/* GFM Task List Item styling */
+.markdownPreview .task-list-item {
+  list-style-type: none; /* Remove default bullet */
+}
+
+.markdownPreview .task-list-item input[type="checkbox"] {
+  margin-right: 0.5em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .editorLayout {
+    flex-direction: column;
+    min-height: 80vh; /* Adjust height for stacked layout */
+  }
+
+  .editorPane {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    min-height: 40vh; /* Give editor a minimum height */
+  }
+
+  .previewPane {
+     min-height: 40vh; /* Give preview a minimum height */
+  }
+}

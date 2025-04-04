@@ -1,0 +1,61 @@
+.textContainer {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: var(--background-secondary-color);
+  color: var(--text-primary-color);
+  min-height: 120px;
+  resize: vertical;
+}
+
+.compareButton {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.compareButton:hover {
+  background-color: var(--primary-dark-color);
+}
+
+.result {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: var(--text-primary-color);
+}
+
+.diffOutput {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: var(--font-mono);
+  background-color: var(--background-secondary-color);
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+/* Colors for added and removed text */
+:root {
+  --diff-add-color: #d4edda;   /* Light green for added text */
+  --diff-remove-color: #f8d7da; /* Light red for removed text */
+}
