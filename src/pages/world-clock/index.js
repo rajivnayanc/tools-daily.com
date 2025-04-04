@@ -16,7 +16,38 @@ const cities = [
   { name: 'Rio de Janeiro', timezone: 'America/Rio_de_Janeiro' },
   { name: 'Johannesburg', timezone: 'Africa/Johannesburg' },
 ];
+let toastContainer;
+/**
+ * Show toast notification
+ * @param {string} message - Toast message
+ * @param {string} type - Toast type (success, error)
+ */
+function showToast(message, type = 'success') {
+    // Check if toast container exists, if not create it
+    if (!document.querySelector('.toast-container')) {
+        toastContainer = document.createElement('div');
+        toastContainer.className = 'toast-container';
+        toastContainer.setAttribute('role', 'status');
+        toastContainer.setAttribute('aria-live', 'polite');
+        document.body.appendChild(toastContainer);
+    }
 
+    // Create toast element
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.textContent = message;
+
+    // Add toast to container
+    toastContainer.appendChild(toast);
+
+    // Remove toast after 3 seconds
+    setTimeout(() => {
+        toast.classList.add('hide');
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
+    }, 3000);
+}
 export default function WorldClock() {
   const [currentTime, setCurrentTime] = useState(moment());
 
@@ -41,15 +72,40 @@ export default function WorldClock() {
           <p>See the current time in major cities around the world.</p>
 
           <ul className={styles.clockList}>
+            <li key="local" className={styles.clockItem}>
+              <span className={styles.cityName}>Local Time:</span>
+              <span className={styles.time}>
+                {currentTime.format('MMMM D, YYYY h:mm:ss A (Z z)')}
+              </span>
+              <button
+                className={styles.copyButton}
+                onClick={() => {
+                  navigator.clipboard.writeText(
+                    currentTime.format('MMMM D, YYYY h:mm:ss A (Z z)')
+                  );
+                  showToast("Copied to clipboard");
+                }}
+              >
+                Copy
+              </button>
+            </li>
             {cities.map((city) => (
               <li key={city.timezone} className={styles.clockItem}>
                 <span className={styles.cityName}>{city.name}:</span>
                 <span className={styles.time}>
-                  {currentTime.tz(city.timezone).format('h:mm:ss A')}
+                  {currentTime.tz(city.timezone).format('MMMM D, YYYY h:mm:ss A (Z z)')}
                 </span>
-                <span className={styles.timezone}>
-                  ({currentTime.tz(city.timezone).format('z')})
-                </span>
+                <button
+                  className={styles.copyButton}
+                  onClick={() => {
+                    navigator.clipboard.writeText(
+                      currentTime.tz(city.timezone).format('MMMM D, YYYY h:mm:ss A (Z z)')
+                    );
+                    showToast("Copied to clipboard");
+                  }}
+                >
+                  Copy
+                </button>
               </li>
             ))}
           </ul>
