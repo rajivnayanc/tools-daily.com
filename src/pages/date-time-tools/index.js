@@ -1,13 +1,15 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import SEO from '../../components/SEO';
 
 export default function DateTimeTools() {
   return (
     <>
-      <Head>
-        <title>Date & Time Tools - DailyTools</title>
-        <meta name="description" content="Collection of tools for date and time calculations and conversions." />
-      </Head>
+      <SEO
+        title="Date & Time Tools - DailyTools"
+        description="Collection of tools for date and time calculations and conversions."
+        keywords="date tools, time tools, date calculator, time converter"
+      />
       <main>
         <div className="container">
           <h1>Date & Time Tools</h1>

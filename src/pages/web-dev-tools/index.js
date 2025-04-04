@@ -1,13 +1,15 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import SEO from '../../components/SEO';
 
 export default function WebDevTools() {
   return (
     <>
-      <Head>
-        <title>Web Development Tools - DailyTools</title>
-        <meta name="description" content="Collection of tools for web developers." />
-      </Head>
+      <SEO
+        title="Web Development Tools - DailyTools"
+        description="Collection of tools for web developers."
+        keywords="web development tools, html encoder, css minifier, color picker, regex tester"
+      />
       <main>
         <div className="container">
           <h1>Web Development Tools</h1>

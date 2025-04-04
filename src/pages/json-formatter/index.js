@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import styles from './JsonFormatter.module.css';
+import SEO from '../../components/SEO';
 
 export default function JsonFormatter() {
   const [json, setJson] = useState('');
@@ -26,11 +27,11 @@ export default function JsonFormatter() {
 
   return (
     <>
-      <Head>
-        <title>JSON Formatter - DailyTools</title>
-        <meta name="description" content="Format and validate JSON data easily." />
-        <meta name="keywords" content="json formatter, json validator, format json, json beautifier" />
-      </Head>
+      <SEO
+        title="JSON Formatter - DailyTools"
+        description="Format and validate JSON data easily."
+        keywords="json formatter, json validator, format json, json beautifier"
+      />
       <main>
         <div className="container">
           <h1>JSON Formatter</h1>

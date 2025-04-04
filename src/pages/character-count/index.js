@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import styles from './CharacterCount.module.css';
+import SEO from '../../components/SEO';
 
 export default function CharacterCount() {
   const [text, setText] = useState('');
@@ -15,11 +16,11 @@ export default function CharacterCount() {
 
   return (
     <>
-      <Head>
-        <title>Character Count - DailyTools</title>
-        <meta name="description" content="Count characters, words, and lines in your text." />
-        <meta name="keywords" content="character count, word count, line count, text analysis" />
-      </Head>
+      <SEO
+        title="Character Count - DailyTools"
+        description="Count characters, words, and lines in your text."
+        keywords="character count, word count, line count, text analysis"
+      />
       <main>
         <div className="container">
           <h1>Character Count</h1>

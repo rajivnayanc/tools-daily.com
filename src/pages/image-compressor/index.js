@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import imageCompression from 'browser-image-compression';
 import styles from './ImageCompressor.module.css'; // We'll create this CSS module
+import SEO from '../../components/SEO';
 
 export default function ImageCompressor() {
   const [resetKey, setResetKey] = useState(0);
@@ -128,11 +129,11 @@ export default function ImageCompressor() {
 
   return (
     <>
-      <Head>
-        <title>Image Compressor - DailyTools</title>
-        <meta name="description" content="Compress and optimize images (JPEG, PNG, WebP) online. Reduce file size while maintaining quality." />
-        <meta name="keywords" content="image compressor, image optimizer, reduce image size, compress jpeg, compress png, compress webp, online tool" />
-      </Head>
+      <SEO
+        title="Image Compressor - DailyTools"
+        description="Compress and optimize images (JPEG, PNG, WebP) online. Reduce file size while maintaining quality."
+        keywords="image compressor, image optimizer, reduce image size, compress jpeg, compress png, compress webp, online tool"
+      />
       <main>
         <div className='container'>
           <h1>Image Compressor</h1>

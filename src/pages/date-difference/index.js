@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import moment from 'moment';
 import styles from './DateDifference.module.css';
+import SEO from '../../components/SEO';
 
 export default function DateDifference() {
   const [startDate, setStartDate] = useState(moment().format('YYYY-MM-DD'));
@@ -28,11 +29,11 @@ export default function DateDifference() {
 
   return (
     <>
-      <Head>
-        <title>Date Difference Calculator - DailyTools</title>
-        <meta name="description" content="Calculate the difference between two dates in days, months, and years." />
-        <meta name="keywords" content="date difference, date calculator, days between dates, months between dates, years between dates" />
-      </Head>
+      <SEO
+        title="Date Difference Calculator - DailyTools"
+        description="Calculate the difference between two dates in days, months, and years."
+        keywords="date difference, date calculator, days between dates, months between dates, years between dates"
+      />
       <main>
         <div className="container">
           <h1>Date Difference Calculator</h1>

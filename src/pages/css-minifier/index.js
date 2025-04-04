@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import styles from './CssMinifier.module.css';
+import SEO from '../../components/SEO';
 
 export default function CssMinifier() {
   const [css, setCss] = useState('');
@@ -31,11 +32,11 @@ export default function CssMinifier() {
 
   return (
     <>
-      <Head>
-        <title>CSS Minifier - DailyTools</title>
-        <meta name="description" content="Minify CSS code to reduce file size." />
-        <meta name="keywords" content="css minifier, minify css, css compressor, clean css" />
-      </Head>
+      <SEO
+        title="CSS Minifier - DailyTools"
+        description="Minify CSS code to reduce file size."
+        keywords="css minifier, minify css, css compressor, clean css"
+      />
       <main>
         <div className="container">
           <h1>CSS Minifier</h1>

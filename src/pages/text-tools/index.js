@@ -1,13 +1,15 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import SEO from '../../components/SEO';
 
 export default function TextTools() {
   return (
     <>
-      <Head>
-        <title>Text Tools - DailyTools</title>
-        <meta name="description" content="Collection of tools for text manipulation and analysis." />
-      </Head>
+      <SEO
+        title="Text Tools - DailyTools"
+        description="Collection of tools for text manipulation and analysis."
+        keywords="text tools, text manipulation, text analysis, case converter, text diff, character count, lorem ipsum"
+      />
       <main>
         <div className="container">
           <h1>Text Tools</h1>

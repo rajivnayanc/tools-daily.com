@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import styles from './HtmlEncoder.module.css';
+import SEO from '../../components/SEO';
 
 export default function HtmlEncoder() {
   const [text, setText] = useState('');
@@ -35,11 +36,11 @@ export default function HtmlEncoder() {
 
   return (
     <>
-      <Head>
-        <title>HTML Encoder/Decoder - DailyTools</title>
-        <meta name="description" content="Encode or decode text for safe use in HTML." />
-        <meta name="keywords" content="html encoder, html decoder, encode html, decode html, html entities" />
-      </Head>
+      <SEO
+        title="HTML Encoder/Decoder - DailyTools"
+        description="Encode or decode text for safe use in HTML."
+        keywords="html encoder, html decoder, encode html, decode html, html entities"
+      />
       <main>
         <div className="container">
           <h1>HTML Encoder/Decoder</h1>

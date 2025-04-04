@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import styles from './UnitConverter.module.css';
+import SEO from '../../components/SEO';
 
 export default function UnitConverter() {
   const [value, setValue] = useState('');
@@ -101,11 +102,11 @@ export default function UnitConverter() {
 
   return (
     <>
-      <Head>
-        <title>Unit Converter - DailyTools</title>
-        <meta name="description" content="Convert between various units (length, weight, temperature, etc.)." />
-        <meta name="keywords" content="unit converter, length converter, weight converter, temperature converter" />
-      </Head>
+      <SEO
+        title="Unit Converter - DailyTools"
+        description="Convert between various units (length, weight, temperature, etc.)."
+        keywords="unit converter, length converter, weight converter, temperature converter"
+      />
       <main>
         <div className="container">
           <h1>Unit Converter</h1>

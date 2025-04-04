@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import styles from './CaseConverter.module.css';
+import SEO from '../../components/SEO';
 
 export default function CaseConverter() {
   const [text, setText] = useState('');
@@ -50,11 +51,11 @@ export default function CaseConverter() {
 
   return (
     <>
-      <Head>
-        <title>Case Converter - DailyTools</title>
-        <meta name="description" content="Convert text between different cases (uppercase, lowercase, title case, etc.)." />
-        <meta name="keywords" content="case converter, uppercase, lowercase, title case, sentence case, inverse case" />
-      </Head>
+      <SEO
+        title="Case Converter - DailyTools"
+        description="Convert text between different cases (uppercase, lowercase, title case, etc.)."
+        keywords="case converter, uppercase, lowercase, title case, sentence case, inverse case"
+      />
       <main>
         <div className="container">
           <h1>Case Converter</h1>

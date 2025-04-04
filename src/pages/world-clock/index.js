@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import moment from 'moment-timezone';
 import styles from './WorldClock.module.css';
+import SEO from '../../components/SEO';
 
 const cities = [
   { name: 'New York', timezone: 'America/New_York' },
@@ -29,11 +30,11 @@ export default function WorldClock() {
 
   return (
     <>
-      <Head>
-        <title>World Clock - DailyTools</title>
-        <meta name="description" content="Check the current time in cities around the world." />
-        <meta name="keywords" content="world clock, time in different cities, current time around the world" />
-      </Head>
+      <SEO
+        title="World Clock - DailyTools"
+        description="Check the current time in cities around the world."
+        keywords="world clock, time in different cities, current time around the world"
+      />
       <main>
         <div className="container">
           <h1>World Clock</h1>

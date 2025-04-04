@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import styles from './PasswordGenerator.module.css';
+import SEO from '../../components/SEO';
 
 export default function PasswordGenerator() {
   const [passwordLength, setPasswordLength] = useState(12);
@@ -37,11 +38,11 @@ export default function PasswordGenerator() {
 
   return (
     <>
-      <Head>
-        <title>Password Generator - DailyTools</title>
-        <meta name="description" content="Generate secure, random passwords." />
-        <meta name="keywords" content="password generator, random password, secure password" />
-      </Head>
+      <SEO
+        title="Password Generator - DailyTools"
+        description="Generate secure, random passwords."
+        keywords="password generator, random password, secure password"
+      />
       <main>
         <div className="container">
           <h1>Password Generator</h1>

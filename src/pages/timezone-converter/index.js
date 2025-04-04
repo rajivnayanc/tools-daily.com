@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState, useMemo } from 'react';
 import moment from 'moment-timezone';
 import styles from './TimezoneConverter.module.css';
+import SEO from '../../components/SEO';
 
 const timezones = moment.tz.names();
 
@@ -45,11 +46,11 @@ export default function TimezoneConverter() {
 
   return (
     <>
-      <Head>
-        <title>Time Zone Converter - DailyTools</title>
-        <meta name="description" content="Convert time between different time zones with ease." />
-        <meta name="keywords" content="time zone converter, time converter, convert time zones, time zone calculator" />
-      </Head>
+      <SEO
+        title="Time Zone Converter - DailyTools"
+        description="Convert time between different time zones with ease."
+        keywords="time zone converter, time converter, convert time zones, time zone calculator"
+      />
       <main>
         <div className="container">
           <h1>Time Zone Converter</h1>

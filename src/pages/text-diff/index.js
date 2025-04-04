@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { diffChars } from 'diff';
 import styles from './TextDiff.module.css';
+import SEO from '../../components/SEO';
 
 export default function TextDiff() {
   const [text1, setText1] = useState('');
@@ -23,11 +24,11 @@ export default function TextDiff() {
 
   return (
     <>
-      <Head>
-        <title>Text Diff Checker - DailyTools</title>
-        <meta name="description" content="Compare two texts and highlight the differences." />
-        <meta name="keywords" content="text diff, text comparison, compare text, difference checker" />
-      </Head>
+      <SEO
+        title="Text Diff Checker - DailyTools"
+        description="Compare two texts and highlight the differences."
+        keywords="text diff, text comparison, compare text, difference checker"
+      />
       <main className={styles.root}>
         <div className="container">
           <h1>Text Diff Checker</h1>

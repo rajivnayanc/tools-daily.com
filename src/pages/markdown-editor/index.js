@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm';
 import styles from './MarkdownEditor.module.css';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import SEO from '../../components/SEO';
 
 const MarkdownEditor = () => {
   const [markdown, setMarkdown] = useState(`# Welcome to the Markdown Editor!
@@ -77,11 +78,11 @@ Start typing in the editor on the left!`);
 
   return (
     <>
-      <Head>
-        <title>Markdown Editor - DailyTools</title>
-        <meta name="description" content="Write, edit, and preview Markdown text in real-time with GitHub Flavored Markdown (GFM) support." />
-        <meta name="keywords" content="markdown editor, markdown preview, real-time markdown, GFM editor, online markdown tool" />
-      </Head>
+      <SEO
+        title="Markdown Editor - DailyTools"
+        description="Write, edit, and preview Markdown text in real-time with GitHub Flavored Markdown (GFM) support."
+        keywords="markdown editor, markdown preview, real-time markdown, GFM editor, online markdown tool"
+      />
       <main>
         <div className="container">
           <h1>Markdown Editor <button onClick={exportToPDF}>Export to PDF</button></h1>

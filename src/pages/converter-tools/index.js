@@ -1,13 +1,15 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import SEO from '../../components/SEO';
 
 export default function ConverterTools() {
   return (
     <>
-      <Head>
-        <title>Converter Tools - DailyTools</title>
-        <meta name="description" content="Collection of tools for various data conversions." />
-      </Head>
+      <SEO
+        title="Converter Tools - DailyTools"
+        description="Collection of tools for various data conversions."
+        keywords="converter tools, unit converter, base64 encoder, json formatter, number base converter"
+      />
       <main>
         <div className="container">
           <h1>Converter Tools</h1>

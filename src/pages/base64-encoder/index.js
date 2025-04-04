@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import styles from './Base64Encoder.module.css';
+import SEO from '../../components/SEO';
 
 export default function Base64Encoder() {
   const [text, setText] = useState('');
@@ -35,11 +36,11 @@ export default function Base64Encoder() {
 
   return (
     <>
-      <Head>
-        <title>Base64 Encoder/Decoder - DailyTools</title>
-        <meta name="description" content="Encode text to Base64 or decode Base64 to text." />
-        <meta name="keywords" content="base64 encoder, base64 decoder, encode base64, decode base64" />
-      </Head>
+      <SEO
+        title="Base64 Encoder/Decoder - DailyTools"
+        description="Encode text to Base64 or decode Base64 to text."
+        keywords="base64 encoder, base64 decoder, encode base64, decode base64"
+      />
       <main>
         <div className="container">
           <h1>Base64 Encoder/Decoder</h1>

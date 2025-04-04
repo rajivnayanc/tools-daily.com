@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import styles from './ColorPicker.module.css';
+import SEO from '../../components/SEO';
 
 export default function ColorPicker() {
   const [color, setColor] = useState('#007bff'); // Default color
@@ -61,11 +62,11 @@ export default function ColorPicker() {
 
   return (
     <>
-      <Head>
-        <title>Color Picker - DailyTools</title>
-        <meta name="description" content="Pick colors and get their HEX, RGB, HSL values." />
-        <meta name="keywords" content="color picker, hex color, rgb color, hsl color" />
-      </Head>
+      <SEO
+        title="Color Picker - DailyTools"
+        description="Pick colors and get their HEX, RGB, HSL values."
+        keywords="color picker, hex color, rgb color, hsl color"
+      />
       <main>
         <div className="container">
           <h1>Color Picker</h1>

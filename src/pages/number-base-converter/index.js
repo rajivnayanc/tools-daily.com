@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import styles from './NumberBaseConverter.module.css';
+import SEO from '../../components/SEO';
 
 export default function NumberBaseConverter() {
   const [number, setNumber] = useState('');
@@ -67,11 +68,11 @@ export default function NumberBaseConverter() {
 
   return (
     <>
-      <Head>
-        <title>Number Base Converter - DailyTools</title>
-        <meta name="description" content="Convert numbers between different bases (binary, octal, decimal, hexadecimal)." />
-        <meta name="keywords" content="number base converter, binary to decimal, decimal to hex, hex to binary" />
-      </Head>
+      <SEO
+        title="Number Base Converter - DailyTools"
+        description="Convert numbers between different bases (binary, octal, decimal, hexadecimal)."
+        keywords="number base converter, binary to decimal, decimal to hex, hex to binary"
+      />
       <main>
         <div className="container">
           <h1>Number Base Converter</h1>
