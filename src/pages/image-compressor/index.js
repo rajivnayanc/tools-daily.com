@@ -138,6 +138,7 @@ export default function ImageCompressor() {
         <div className='container'>
           <h1>Image Compressor</h1>
           <p>Reduce the file size of your images (JPEG, PNG, WebP) directly in your browser.</p>
+          <p>Image compression is essential for optimizing website performance and improving user experience. By reducing image file sizes, you can significantly decrease page loading times, conserve bandwidth, and enhance overall website speed. This leads to better engagement, lower bounce rates, and improved search engine rankings.</p>
 
           {error && <p className={styles.error}>{error}</p>}
 

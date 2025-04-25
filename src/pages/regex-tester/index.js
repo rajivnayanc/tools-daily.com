@@ -111,7 +111,10 @@ export default function RegexTester() {
       <main>
         <div className="container">
           <h1>Regex Tester</h1>
-          <p>Enter your regular expression and test string to see the matches.</p>
+          <p>Regular expressions (regex) are powerful patterns used to match character combinations in strings. They are used in programming languages, text editors, and other tools to search, replace, and validate text.</p>
+          <p>Regular expressions are widely used in software development, data analysis, and network security. They enable developers to perform complex text manipulations, validate user input, and extract valuable information from large datasets. Whether you're building a web application, analyzing log files, or securing a network, regular expressions provide a versatile and efficient way to work with text.</p>
+          <p>This tool allows you to test your regular expressions against a test string and see the matches in real-time.</p>
+          <p><strong>How to use:</strong> Enter your regular expression pattern in the top input field, and any flags you want to use (like 'g' for global, 'i' for case-insensitive) in the flags field. Then, enter the text you want to test against in the "Test String" area. The highlighted matches and a list of matches will be displayed below.</p>
 
           <div className={styles.regexInputContainer}>
             <span className={styles.regexDelimiter}>/</span>

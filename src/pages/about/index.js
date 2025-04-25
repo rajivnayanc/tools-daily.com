@@ -64,6 +64,9 @@ const About = () => {
 
                             <h2>Technical Details</h2>
                             <p>DailyTools is built with modern web technologies, focusing on performance, accessibility, and responsive design. All our tools work client-side, meaning your data never leaves your browser.</p>
+
+                            <h2>Future Plans</h2>
+                            <p>We are constantly working to improve DailyTools and expand our collection of utility tools. Our future plans include adding more advanced tools, improving the user interface, and enhancing the overall user experience. We are also committed to keeping DailyTools free and accessible to everyone.</p>
                         </div>
                     </section>
                 </div>

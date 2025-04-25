@@ -44,7 +44,10 @@ export default function HtmlEncoder() {
       <main>
         <div className="container">
           <h1>HTML Encoder/Decoder</h1>
-          <p>Enter text to encode for safe use in HTML or decode HTML entities.</p>
+          <p>HTML encoding is the process of converting characters that have special meaning in HTML (like character code 60, character code 62, character code 38, character code 34) into their corresponding HTML entities. This is essential for displaying these characters correctly in a web page and preventing potential security vulnerabilities like cross-site scripting (XSS).</p>
+          <p>HTML encoding and decoding are crucial for ensuring the security and proper rendering of web content. Encoding protects against malicious attacks by preventing the execution of unintended code, while decoding ensures that special characters are displayed correctly to the user. These processes are fundamental to maintaining a safe and user-friendly web experience.</p>
+          <p>This tool allows you to easily encode plain text into HTML entities or decode HTML entities back into their original text format.</p>
+          <p><strong>How to use:</strong> Enter the text you want to encode or decode into the text area below. Click "Encode to HTML" to convert plain text to HTML entities, or click "Decode from HTML" to convert HTML entities back to plain text. The result will appear below the buttons.</p>
 
           <textarea
             className={styles.input}

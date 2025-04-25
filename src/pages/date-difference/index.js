@@ -37,7 +37,9 @@ export default function DateDifference() {
       <main>
         <div className="container">
           <h1>Date Difference Calculator</h1>
-          <p>Enter two dates to calculate the difference between them.</p>
+          <p>Find out the exact duration between two specific dates. This tool calculates the difference in terms of total days, months, and years, which can be useful for project planning, tracking milestones, calculating ages, or determining time spans.</p>
+          <p>Calculating the difference between dates has numerous applications across various domains. From determining the duration of a project to calculating the age of a person or tracking the time elapsed since a significant event, this calculation provides valuable insights into the passage of time.</p>
+          <p><strong>How to use:</strong> Select a "Start Date" and an "End Date" using the date pickers below. Click the "Calculate Difference" button to see the duration between the selected dates displayed in days, months, and years.</p>
 
           <div className={styles.dateInputContainer}>
             <label htmlFor="startDate" className={styles.label}>Start Date:</label>

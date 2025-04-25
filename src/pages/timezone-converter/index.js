@@ -54,7 +54,9 @@ export default function TimezoneConverter() {
       <main>
         <div className="container">
           <h1>Time Zone Converter</h1>
-          <p>Convert times from one time zone to another.</p>
+          <p>Easily convert a specific date and time from one time zone to another. This tool helps you schedule international calls, plan travel, or understand event timings across different regions accurately.</p>
+          <p>Time zone conversion is crucial in today's globalized world, where communication and collaboration often span multiple time zones. Accurately converting times ensures that meetings are scheduled appropriately, deadlines are met, and misunderstandings are avoided. This tool simplifies the process of time zone conversion, making it easy to coordinate activities across different regions.</p>
+          <p><strong>How to use:</strong> Select the date and time you want to convert using the "Date and Time" picker. Choose the original time zone from the "From Time Zone" dropdown. Select the target time zone from the "To Time Zone" dropdown. Click the "Convert Time" button to see the equivalent date and time in the target time zone.</p>
 
           <div className={styles.inputGroup}>
             <label htmlFor="dateTime" className={styles.label}>Date and Time:</label>

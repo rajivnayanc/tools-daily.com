@@ -21,6 +21,7 @@ export default function Custom404() {
               </div>
               <h1>Feature Coming Soon</h1>
               <p>We are working hard to bring this tool to you. Please check back later!</p>
+              <p>A 404 error means that the page you are looking for could not be found on our server. This could be due to a broken link, a mistyped URL, or the page may have been removed.</p>
               <div className="not-found-actions">
                 <Link href="/" className="btn btn-primary">
                   <FontAwesomeIcon icon={faArrowLeft} />

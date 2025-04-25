@@ -24,7 +24,9 @@ export default function CharacterCount() {
       <main>
         <div className="container">
           <h1>Character Count</h1>
-          <p>Enter your text to count the number of characters, words, and lines.</p>
+          <p>Analyze your text to determine the number of characters, words, and lines it contains. This tool is useful for writers, editors, and anyone who needs to keep track of text length for various purposes.</p>
+          <p>Character count tools are essential for meeting specific length requirements in various contexts, such as social media posts, meta descriptions, and academic papers. They help users ensure that their text adheres to the prescribed limits, optimizing communication and avoiding truncation or rejection.</p>
+          <p><strong>How to use:</strong> Simply paste or type your text into the text area below. The tool will automatically calculate and display the number of characters, words, and lines in your text.</p>
 
           <textarea
             className={styles.input}

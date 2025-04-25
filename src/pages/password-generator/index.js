@@ -47,6 +47,7 @@ export default function PasswordGenerator() {
         <div className="container">
           <h1>Password Generator</h1>
           <p>Generate secure, random passwords based on your criteria.</p>
+          <p>In today's digital landscape, strong passwords are essential for protecting your online accounts and personal information. A robust password should be long, complex, and unique, making it difficult for hackers to crack. This tool helps you create strong passwords that meet these criteria, enhancing your online security and peace of mind.</p>
 
           <div className={styles.options}>
             <div className={styles.option}>

@@ -110,7 +110,9 @@ export default function UnitConverter() {
       <main>
         <div className="container">
           <h1>Unit Converter</h1>
-          <p>Convert between different units of measurement.</p>
+          <p>Easily convert between various units of measurement for length, weight, and temperature. Whether you're working with metric and imperial systems or need to switch between Celsius and Fahrenheit, this tool provides quick and accurate conversions.</p>
+          <p>Unit converters are essential tools in various fields, including science, engineering, and everyday life. They allow for seamless translation between different measurement systems, ensuring accuracy and consistency in calculations and comparisons. Whether you're a student, a professional, or simply need to convert units for a recipe, this tool provides a convenient solution.</p>
+          <p><strong>How to use:</strong> Enter the value you want to convert, select the unit you are converting from, select the unit you want to convert to, and click the "Convert" button. The result will be displayed below.</p>
 
           <div className={styles.inputContainer}>
             <label htmlFor="value" className={styles.label}>

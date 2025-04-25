@@ -64,6 +64,9 @@ const TermsOfService = () => {
                             <h2>Changes to Terms</h2>
                             <p>We reserve the right to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days&apos; notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
 
+                            <h2>Consequences of Violation</h2>
+                            <p>Violation of these Terms may result in the termination of your access to DailyTools and may also lead to legal action. We reserve the right to investigate and prosecute violations of these Terms to the fullest extent of the law.</p>
+
                             <h2>Governing Law</h2>
                             <p>These Terms shall be governed and construed in accordance with the laws of [Your Country/State], without regard to its conflict of law provisions.</p>
                         </div>

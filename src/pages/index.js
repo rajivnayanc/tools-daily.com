@@ -140,6 +140,7 @@ export default function Home() {
             <div className="hero-content">
               <h2>Free Online Tools for Everyday Tasks</h2>
               <p>Simple, fast, and reliable utilities to help you with your daily work. No ads, no signup required.</p>
+              <p>DailyTools offers a wide range of free online tools designed to simplify your everyday tasks. From converting timestamps and formatting code to calculating dates and generating passwords, our tools are designed to be easy to use and accessible to everyone. With no ads or signup required, you can focus on getting your work done quickly and efficiently.</p>
               <div className="search-container">
                 <div className="form">
                   <input id="search-tools" type="text" name="q" placeholder="Search for a tool..." aria-label="Search for a tool" />

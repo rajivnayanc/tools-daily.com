@@ -33,7 +33,10 @@ export default function LoremIpsum() {
       <main>
         <div className="container">
           <h1>Lorem Ipsum Generator</h1>
-          <p>Generate placeholder text using the classic Lorem Ipsum passage.</p>
+          <p>Lorem Ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. It has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+          <p>Dating back to the 16th century, Lorem Ipsum originated as a scrambled version of Cicero's "De finibus bonorum et malorum," offering a realistic yet nonsensical text for designers to visualize typography and page layout without being distracted by actual content. Its enduring popularity lies in its ability to simulate the appearance of real text, allowing designers to focus on the aesthetic aspects of their designs.</p>
+          <p>This tool generates paragraphs of Lorem Ipsum text for use as placeholder content in your designs.</p>
+          <p><strong>How to use:</strong> Enter the number of paragraphs you want to generate (between 1 and 10) in the input field below. The tool will automatically generate the specified number of Lorem Ipsum paragraphs.</p>
 
           <div className={styles.inputContainer}>
             <label htmlFor="paragraphs" className={styles.label}>

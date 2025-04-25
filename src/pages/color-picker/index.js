@@ -70,7 +70,9 @@ export default function ColorPicker() {
       <main>
         <div className="container">
           <h1>Color Picker</h1>
-          <p>Select a color to see its HEX, RGB, and HSL values.</p>
+          <p>Choose the perfect color for your web projects with our easy-to-use color picker. This tool displays the HEX, RGB, and HSL values for any color you select, making it simple to integrate your chosen color into your code.</p>
+          <p>Color pickers are indispensable tools for designers and developers, enabling them to select and manage colors effectively. They provide a visual interface for exploring the color spectrum and generating color palettes, ensuring consistency and harmony in design projects. Whether you're creating a website, a mobile app, or a marketing campaign, a color picker can help you find the perfect hues to convey your message and brand identity.</p>
+          <p><strong>How to use:</strong> Click the color input below to open the color picker. Select a color, and the corresponding HEX, RGB, and HSL values will be displayed. You can then copy these values to use in your CSS or other design applications.</p>
 
           <div className={styles.colorInputContainer}>
             <label htmlFor="color" className={styles.label}>

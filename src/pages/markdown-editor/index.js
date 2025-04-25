@@ -87,6 +87,7 @@ Start typing in the editor on the left!`);
         <div className="container">
           <h1>Markdown Editor <button onClick={exportToPDF}>Export to PDF</button></h1>
           <p>Write Markdown on the left and see the rendered HTML on the right.</p>
+          <p>Markdown editors provide a streamlined and efficient way to create formatted text for the web. With their simple syntax and real-time preview capabilities, they empower writers and developers to focus on content creation rather than complex formatting. Whether you're crafting documentation, writing blog posts, or creating README files, a Markdown editor can significantly enhance your productivity and workflow.</p>
 
           <div className={styles.editorLayout}>
             <div className={styles.editorPane}>

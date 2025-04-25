@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /privacy-policy
+Disallow: /terms-of-service
+
+Sitemap: https://tools-daily.com/sitemap.xml

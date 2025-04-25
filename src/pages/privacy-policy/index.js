@@ -103,6 +103,9 @@ const PrivacyPolicy = () => {
                                 <li><strong>Right to Data Portability:</strong> You can request transfer of your data.</li>
                             </ul>
 
+                            <h2>Contact Us</h2>
+                            <p>If you have any questions or concerns about our privacy policy or our data practices, please contact us at: contact@tools-daily.com</p>
+
                             <h2>Changes to This Privacy Policy</h2>
                             <p>We may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page and updating the <b><i>Last Updated</i></b> date.</p>
                         </div>

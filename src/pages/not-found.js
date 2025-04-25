@@ -20,6 +20,7 @@ export default function NotFound() {
               </div>
               <h1>Feature Coming Soon</h1>
               <p>We are working hard to bring this tool to you. Please check back later!</p>
+              <p>This page indicates that the feature is under development and will be available soon. We appreciate your patience and understanding as we work to enhance our platform with new and exciting tools.</p>
               <div className="not-found-actions">
                 <Link href="/" className="btn btn-primary">
                   <FontAwesomeIcon icon={faArrowLeft} />
@@ -32,4 +33,4 @@ export default function NotFound() {
       </main>
     </>
   );
-} 
+}
