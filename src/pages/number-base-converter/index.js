@@ -78,7 +78,7 @@ export default function NumberBaseConverter() {
           <h1>Number Base Converter</h1>
           <p>Different number systems (bases) are used in various computing and mathematical contexts. Common bases include Binary (base-2), Decimal (base-10), and Hexadecimal (base-16). This tool allows you to easily convert numbers between these different bases.</p>
           <p>Number base conversion is a fundamental concept in computer science and digital electronics. It is essential for understanding how computers represent and manipulate data. Converting between binary, decimal, and hexadecimal is crucial for tasks such as memory addressing, data representation, and low-level programming.</p>
-          <p><strong>How to use:</strong> Enter the number you want to convert in the "Number" field. Select the base of the input number from the "From Base" dropdown. Select the desired output base from the "To Base" dropdown. Click the "Convert" button to see the result.</p>
+          <p><strong>How to use:</strong> Enter the number you want to convert in the &quot;Number&quot; field. Select the base of the input number from the &quot;From Base&quot; dropdown. Select the desired output base from the &quot;To Base&quot; dropdown. Click the &quot;Convert&quot; button to see the result.</p>
 
           <div className={styles.inputContainer}>
             <label htmlFor="number" className={styles.label}>

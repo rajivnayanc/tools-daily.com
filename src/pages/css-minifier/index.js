@@ -43,7 +43,7 @@ export default function CssMinifier() {
           <p>CSS minification is the process of removing unnecessary characters from CSS code without affecting its functionality. This includes removing whitespace, comments, and other non-essential elements, resulting in a smaller file size and improved website loading times.</p>
           <p>Minifying CSS code offers significant benefits for website performance and user experience. Smaller CSS files translate to faster loading times, reduced bandwidth consumption, and improved search engine rankings. By optimizing CSS code, developers can enhance website speed and deliver a smoother browsing experience for their users.</p>
           <p>This tool allows you to easily minify your CSS code, making it more efficient for production use.</p>
-          <p><strong>How to use:</strong> Paste your CSS code into the text area below and click the "Minify CSS" button. The minified CSS code (or an error message) will appear below.</p>
+          <p><strong>How to use:</strong> Paste your CSS code into the text area below and click the &quot;Minify CSS&quot; button. The minified CSS code (or an error message) will appear below.</p>
 
           <textarea
             className={styles.input}

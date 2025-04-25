@@ -60,9 +60,9 @@ export default function CaseConverter() {
         <div className="container">
           <h1>Case Converter</h1>
           <p>Easily change the capitalization of your text between various common formats like uppercase, lowercase, title case (capitalizing the first letter of each word), sentence case (capitalizing only the first letter of each sentence), and inverse case (swapping the case of each letter).</p>
-          <p>Case conversion is an essential tool for ensuring consistency and readability in written content. Whether you're preparing documents, formatting code, or creating web content, the ability to quickly and easily change the case of text can save time and improve the overall quality of your work.</p>
+          <p>Case conversion is an essential tool for ensuring consistency and readability in written content. Whether you&apos;re preparing documents, formatting code, or creating web content, the ability to quickly and easily change the case of text can save time and improve the overall quality of your work.</p>
           <p>This tool is useful for formatting headlines, standardizing text input, or simply adjusting text to meet specific style requirements.</p>
-          <p><strong>How to use:</strong> Paste or type your text into the text area below. Click one of the buttons (e.g., "Uppercase", "Lowercase") to convert the text to the desired case. The converted text will appear below the buttons.</p>
+          <p><strong>How to use:</strong> Paste or type your text into the text area below. Click one of the buttons (e.g., &quot;Uppercase&quot;, &quot;Lowercase&quot;) to convert the text to the desired case. The converted text will appear below the buttons.</p>
 
           <textarea
             className={styles.input}

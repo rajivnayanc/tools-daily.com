@@ -33,8 +33,8 @@ export default function TextDiff() {
         <div className="container">
           <h1>Text Diff Checker</h1>
           <p>This tool allows you to compare two pieces of text and visually identify the differences between them. It highlights additions and removals, making it easy to spot changes in documents, code, or any other text-based content.</p>
-          <p>Text diff tools are invaluable for version control, code review, and document comparison. They enable users to quickly identify modifications, track changes, and merge different versions of text-based files. Whether you're a software developer, a writer, or a researcher, a text diff tool can streamline your workflow and improve collaboration.</p>
-          <p><strong>How to use:</strong> Paste or type the first text into the "Text 1" area and the second text into the "Text 2" area. Click the "Compare Texts" button to highlight the differences. Additions are shown in green, and removals are shown in red.</p>
+          <p>Text diff tools are invaluable for version control, code review, and document comparison. They enable users to quickly identify modifications, track changes, and merge different versions of text-based files. Whether you&apos;re a software developer, a writer, or a researcher, a text diff tool can streamline your workflow and improve collaboration.</p>
+          <p><strong>How to use:</strong> Paste or type the first text into the &quot;Text 1&quot; area and the second text into the &quot;Text 2&quot; area. Click the Compare Texts&quot; button to highlight the differences. Additions are shown in green, and removals are shown in red.</p>
 
           <div className={styles.textContainer}>
             <label htmlFor="text1" className={styles.label}>Text 1:</label>

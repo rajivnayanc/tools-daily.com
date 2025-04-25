@@ -14,7 +14,7 @@ export default function ConverterTools() {
         <div className="container">
           <h1>Converter Tools</h1>
           <p>Simplify your data transformation tasks with our versatile collection of converter tools. Whether you need to convert units, encode/decode data, format code, or change number bases, these utilities are designed to streamline your workflow.</p>
-          <p>In today's fast-paced digital environment, converter tools are indispensable for developers, designers, and anyone working with diverse data formats. They bridge the gaps between different systems and standards, ensuring seamless data exchange and manipulation.</p>
+          <p>In today&apos;s fast-paced digital environment, converter tools are indispensable for developers, designers, and anyone working with diverse data formats. They bridge the gaps between different systems and standards, ensuring seamless data exchange and manipulation.</p>
           <p>Explore the available converters:</p>
           <ul>
             <li><Link href="/unit-converter">Unit Converter</Link></li>

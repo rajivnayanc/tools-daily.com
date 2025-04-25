@@ -46,7 +46,7 @@ export default function Base64Encoder() {
           <h1>Base64 Encoder/Decoder</h1>
           <p>Base64 encoding is commonly used to transmit binary data over mediums that are designed for text. This tool allows you to easily encode plain text into its Base64 representation or decode a Base64 string back into its original text format.</p>
           <p>Base64 encoding finds applications in various scenarios, including embedding images directly into HTML or CSS, transmitting data in email attachments, and storing configuration data in a human-readable format. It ensures that binary data can be safely transmitted and stored without corruption.</p>
-          <p><strong>How to use:</strong> Enter the text or Base64 string into the text area below. Click "Encode to Base64" to convert plain text to Base64, or click "Decode from Base64" to convert a Base64 string back to plain text. The result will appear below the buttons.</p>
+          <p><strong>How to use:</strong> Enter the text or Base64 string into the text area below. Click &quot;Encode to Base64&quot; to convert plain text to Base64, or click &quot;Decode from Base64&quot; to convert a Base64 string back to plain text. The result will appear below the buttons.</p>
 
           <textarea
             className={styles.input}

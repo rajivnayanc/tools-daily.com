@@ -70,8 +70,8 @@ export default function WorldClock() {
         <div className="container">
           <h1>World Clock</h1>
           <p>Quickly check the current local time in various major cities across different time zones. This is useful for coordinating meetings, contacting people internationally, or simply staying aware of time differences.</p>
-          <p>A world clock is an invaluable tool for anyone who interacts with individuals or organizations across different time zones. It simplifies scheduling, reduces the risk of miscommunication, and promotes a better understanding of global time differences. Whether you're a business professional, a traveler, or simply curious about the world, a world clock can help you stay connected and informed.</p>
-          <p>The times below update automatically every second. You can click the "Copy" button next to any time to copy it to your clipboard.</p>
+          <p>A world clock is an invaluable tool for anyone who interacts with individuals or organizations across different time zones. It simplifies scheduling, reduces the risk of miscommunication, and promotes a better understanding of global time differences. Whether you&apos;re a business professional, a traveler, or simply curious about the world, a world clock can help you stay connected and informed.</p>
+          <p>The times below update automatically every second. You can click the &quot;Copy&quot; button next to any time to copy it to your clipboard.</p>
 
           <ul className={styles.clockList}>
             <li key="local" className={styles.clockItem}>

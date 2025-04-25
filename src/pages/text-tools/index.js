@@ -14,7 +14,7 @@ export default function TextTools() {
         <div className="container">
           <h1>Text Tools</h1>
           <p>Enhance your text processing capabilities with our selection of text manipulation and analysis tools. From changing case and comparing differences to counting characters and generating placeholder text, these utilities are designed to assist with various text-related tasks.</p>
-          <p>In the realm of content creation and digital communication, text tools play a vital role in refining and optimizing written material. Whether you're crafting compelling marketing copy, editing important documents, or analyzing textual data, these tools provide the functionality needed to achieve precision and clarity.</p>
+          <p>In the realm of content creation and digital communication, text tools play a vital role in refining and optimizing written material. Whether you&apos;re crafting compelling marketing copy, editing important documents, or analyzing textual data, these tools provide the functionality needed to achieve precision and clarity.</p>
           <p>Explore the available text utilities:</p>
           <ul>
             <li><Link href="/case-converter">Case Converter</Link></li>

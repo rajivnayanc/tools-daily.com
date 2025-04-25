@@ -38,7 +38,7 @@ export default function JsonFormatter() {
           <p>JSON (JavaScript Object Notation) is a lightweight data-interchange format that is easy for humans to read and write and easy for machines to parse and generate. Formatting JSON makes it more readable and helps in debugging by structuring the data clearly with proper indentation.</p>
           <p>Using a JSON formatter offers several benefits, including improved readability, easier debugging, and enhanced collaboration. By presenting JSON data in a structured and organized manner, it becomes simpler to identify errors, understand complex data structures, and share information with others.</p>
           <p>This tool validates your JSON data and formats it into a clean, indented structure. If the JSON is invalid, it will display an error message.</p>
-          <p><strong>How to use:</strong> Paste your raw JSON data into the text area below and click the "Format JSON" button. The formatted JSON (or an error message) will appear below. You can then copy the formatted JSON to your clipboard or save it as a file.</p>
+          <p><strong>How to use:</strong> Paste your raw JSON data into the text area below and click the &quot;Format JSON&quot; button. The formatted JSON (or an error message) will appear below. You can then copy the formatted JSON to your clipboard or save it as a file.</p>
 
           <textarea
             className={styles.input}
