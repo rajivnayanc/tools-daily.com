@@ -1,6 +1,6 @@
 # Daily Tools
 
-<table>
+<table border="0">
 <tr>
     <td>
     <img width=300 src="public/favicon.ico">    
