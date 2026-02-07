@@ -6,6 +6,7 @@ import SEO from '../../components/SEO';
 import AdUnit from '../../components/AdUnit';
 import FAQ from '../../components/SEO/FAQ';
 import SchemaOrg from '../../components/SEO/SchemaOrg';
+import Link from 'next/link';
 
 export default function JsonFormatter() {
   const [json, setJson] = useState('');
@@ -182,10 +183,10 @@ export default function JsonFormatter() {
           <div className="glass-panel" style={{ padding: '20px', marginBottom: '30px' }}>
             <h3>Related Tools</h3>
             <ul style={{ listStyle: 'none' }}>
-              <li style={{ marginBottom: '10px' }}><a href="/xml-formatter">XML Formatter</a></li>
-              <li style={{ marginBottom: '10px' }}><a href="/html-encoder">HTML Encoder</a></li>
-              <li style={{ marginBottom: '10px' }}><a href="/base64-encoder">Base64 Encoder</a></li>
-              <li style={{ marginBottom: '10px' }}><a href="/yaml-to-json">YAML to JSON</a></li>
+              <li style={{ marginBottom: '10px' }}><Link href="/xml-formatter">XML Formatter</Link></li>
+              <li style={{ marginBottom: '10px' }}><Link href="/html-encoder">HTML Encoder</Link></li>
+              <li style={{ marginBottom: '10px' }}><Link href="/base64-encoder">Base64 Encoder</Link></li>
+              <li style={{ marginBottom: '10px' }}><Link href="/yaml-to-json">YAML to JSON</Link></li>
             </ul>
           </div>
           <AdUnit slot="9876543210" format="vertical" style={{ height: '600px' }} />

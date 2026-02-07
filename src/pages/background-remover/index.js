@@ -279,14 +279,14 @@ export default function BackgroundRemover() {
                             <p>
                                 This tool utilizes advanced machine learning models derived from technologies similar to <em>Segment Anything Model (SAM)</em>.
                                 When you upload an image, the AI analyzes the pixels to distinguish the foreground subject (people, products, cars, animals)
-                                from the background. It then creates a precise mask and effectively "erases" the background pixels, leaving you with a clean,
+                                from the background. It then creates a precise mask and effectively &quot;erases&quot; the background pixels, leaving you with a clean,
                                 transparent image ready for use in presentations, e-commerce listings, or graphic design projects.
                             </p>
 
                             <h3>Perfect for E-Commerce and Marketing</h3>
                             <p>
                                 If you run an online store, consistent product photography is key. Use this tool to remove distracting backgrounds
-                                and replace them with pure white or brand colors. It's also excellent for creating marketing assets, stickers,
+                                and replace them with pure white or brand colors. It&apos;s also excellent for creating marketing assets, stickers,
                                 and social media content.
                             </p>
                         </div>

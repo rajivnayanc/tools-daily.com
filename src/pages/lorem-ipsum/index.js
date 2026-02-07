@@ -182,8 +182,8 @@ export default function LoremIpsum() {
             <div className="tool-info" style={{ marginTop: '40px' }}>
               <h2>Details regarding Lorem Ipsum</h2>
               <p>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." is the most famous placeholder text.
-                It looks like Latin, but it's actually nonsense.
+                &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit...&quot; is the most famous placeholder text.
+                It looks like Latin, but it&apos;s actually nonsense.
                 Designers use it to show where text will go without distracting the viewer with readable content.
               </p>
             </div>

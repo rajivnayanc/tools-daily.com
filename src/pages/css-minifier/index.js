@@ -146,7 +146,7 @@ export default function CssMinifier() {
             <div className="tool-info" style={{ marginTop: '40px' }}>
               <h2>What does this tool do?</h2>
               <ul style={{ listStyle: 'disc', paddingLeft: '20px' }}>
-                <li>Removes comments (<code>/* ... */</code>)</li>
+                <li>Removes comments (<code>{"/* ... */"}</code>)</li>
                 <li>Removes unnecessary spaces and line breaks</li>
                 <li>Removes last semicolons in blocks</li>
                 <li>Optimizes delimiters</li>

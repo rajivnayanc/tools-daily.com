@@ -72,7 +72,7 @@ export default function Home() {
                     <ToolCard key={index} tool={tool} />
                   ))
                 ) : (
-                  <p className="no-results">No tools found matching "{searchTerm}"</p>
+                  <p className="no-results">No tools found matching &quot;{searchTerm}&quot;</p>
                 )}
               </div>
             )}

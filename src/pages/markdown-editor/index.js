@@ -175,7 +175,7 @@ export default function MarkdownEditor() {
               <h2>Why use Markdown?</h2>
               <p>
                 Markdown is fast, portable, and widely supported. It allows you to write formatted text
-                without taking your hands off the keyboard. It's the standard for developers on GitHub,
+                without taking your hands off the keyboard. It&apos;s the standard for developers on GitHub,
                 Stack Overflow, and Reddit.
               </p>
             </div>

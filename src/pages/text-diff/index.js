@@ -177,7 +177,7 @@ export default function TextDiff() {
                 <li>Paste the original Version of your text in the left box.</li>
                 <li>Paste the new/modified version in the right box.</li>
                 <li>Select the comparison mode (Characters, Words, or Lines).</li>
-                <li>Click "Compare Texts" to see the differences highlighted.</li>
+                <li>Click &quot;Compare Texts&quot; to see the differences highlighted.</li>
               </ol>
             </div>
 
