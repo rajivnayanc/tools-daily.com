@@ -15,6 +15,7 @@ export const tools = [
     { name: 'Color Picker', url: 'color-picker', category: 'Design Tools' },
     { name: 'Number Base Converter', url: 'number-base-converter', category: 'Converters' },
     { name: 'Password Generator', url: 'password-generator', category: 'Utilities' },
+    { name: 'Background Remover', url: 'background-remover', category: 'Utilities' },
     { name: 'Image Compressor', url: 'image-compressor', category: 'Utilities' },
     { name: 'Markdown Editor', url: 'markdown-editor', category: 'Utilities' },
     { name: 'Regex Tester', url: 'regex-tester', category: 'Developer Tools' },

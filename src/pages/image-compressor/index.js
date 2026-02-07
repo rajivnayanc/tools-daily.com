@@ -348,6 +348,7 @@ export default function ImageCompressor() {
           <div className="glass-panel" style={{ padding: '20px', marginBottom: '30px' }}>
             <h3>Related Tools</h3>
             <ul style={{ listStyle: 'none' }}>
+              <li style={{ marginBottom: '10px' }}><Link href="/background-remover">Background Remover</Link></li>
               <li style={{ marginBottom: '10px' }}><Link href="/base64-encoder">Base64 Encoder</Link></li>
               <li style={{ marginBottom: '10px' }}><Link href="/color-picker">Color Picker</Link></li>
               <li style={{ marginBottom: '10px' }}><Link href="/unit-converter">Unit Converter</Link></li>
