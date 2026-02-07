@@ -118,7 +118,15 @@ export default function RegexTester() {
 
               <div className="input-group" style={{ marginBottom: '20px' }}>
                 <label>Regular Expression</label>
-                <div style={{ display: 'flex', alignItems: 'center', background: 'rgba(255,255,255,0.05)', borderRadius: '8px', border: error ? '1px solid var(--danger)' : '1px solid var(--border-color)' }}>
+                <div style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  background: 'rgba(255,255,255,0.05)',
+                  borderRadius: '8px',
+                  border: error ? '1px solid var(--danger)' : '1px solid var(--border-color)',
+                  overflow: 'hidden'
+                }}>
                   <span style={{ padding: '0 15px', color: 'var(--text-muted)', fontSize: '1.2rem' }}>/</span>
                   <input
                     type="text"
@@ -126,7 +134,9 @@ export default function RegexTester() {
                     onChange={(e) => setRegexStr(e.target.value)}
                     placeholder="pattern"
                     style={{
-                      flex: 1, background: 'transparent', border: 'none',
+                      flex: 1,
+                      minWidth: '200px',
+                      background: 'transparent', border: 'none',
                       padding: '15px 0', fontSize: '1.2rem', fontFamily: 'monospace', color: 'inherit'
                     }}
                   />
@@ -145,7 +155,7 @@ export default function RegexTester() {
                 {error && <div style={{ color: 'var(--danger)', marginTop: '5px', fontSize: '0.9rem' }}>{error}</div>}
               </div>
 
-              <div className="tool-grid-2-col" style={{ display: 'grid', gap: '30px' }}>
+              <div className="tool-grid-2-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
 
                 <div className="input-group">
                   <label>Test String</label>

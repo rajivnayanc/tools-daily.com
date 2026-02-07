@@ -116,27 +116,42 @@ export default function PasswordGenerator() {
 
             <div className="tool-panel">
 
-              <div className="password-display" style={{ position: 'relative', marginBottom: '30px' }}>
+              <div className="password-display glass-input" style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginBottom: '30px',
+                padding: '10px 15px',
+                gap: '10px'
+              }}>
                 <input
                   type="text"
                   value={password}
                   readOnly
-                  className="glass-input"
                   style={{
+                    flex: 1,
+                    background: 'transparent',
+                    border: 'none',
                     fontSize: '1.5rem',
                     textAlign: 'center',
-                    padding: '20px',
                     letterSpacing: '2px',
                     fontFamily: 'monospace',
-                    color: strength === 'Strong' ? 'var(--success)' : strength === 'Medium' ? 'var(--warning)' : 'var(--danger)'
+                    color: strength === 'Strong' ? 'var(--success)' : strength === 'Medium' ? 'var(--warning)' : 'var(--danger)',
+                    padding: '10px 0',
+                    width: '100%',
+                    margin: 0 // Override global input margin
                   }}
                 />
                 <button
                   onClick={handleCopy}
                   className="btn primary"
                   style={{
-                    position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)',
-                    borderRadius: '50%', width: '40px', height: '40px', padding: 0
+                    borderRadius: '8px',
+                    width: 'auto',
+                    height: 'auto',
+                    padding: '10px 15px',
+                    minWidth: 'auto',
+                    flexShrink: 0
                   }}
                   title="Copy Password"
                 >

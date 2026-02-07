@@ -271,7 +271,7 @@ export default function ImageCompressor() {
 
                   </div>
 
-                  <div className="image-comparison" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
+                  <div className="image-comparison" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
 
                     <div className="image-card glass-panel" style={{ padding: '15px', display: 'flex', flexDirection: 'column' }}>
                       <h4>Original</h4>
