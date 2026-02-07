@@ -1,279 +1,111 @@
-import { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faClock, faCode, faExchangeAlt, faFont, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useState, useEffect } from "react";
 import Head from "next/head";
-import Link from "next/link";
-
-let toastContainer; // Declare toastContainer outside the function
-
-function showToast(message, type = 'success') {
-  // Check if toast container exists, if not create it
-  if (!document.querySelector('.toast-container')) {
-    toastContainer = document.createElement('div');
-    toastContainer.className = 'toast-container';
-    toastContainer.setAttribute('role', 'status');
-    toastContainer.setAttribute('aria-live', 'polite');
-    document.body.appendChild(toastContainer);
-  }
-
-  // Create toast element
-  const toast = document.createElement('div');
-  toast.className = `toast ${type}`;
-  toast.textContent = message;
-
-  // Add toast to container
-  toastContainer.appendChild(toast);
-
-  // Remove toast after 3 seconds
-  setTimeout(() => {
-    toast.classList.add('hide');
-    setTimeout(() => {
-      toast.remove();
-    }, 3000);
-  }, 3000);
-}
-
-const initSearchFunctionality = () => {
-  const searchInput = document.getElementById('search-tools');
-  const searchButton = document.getElementById('search-button');
-
-  if (!searchInput || !searchButton) return;
-
-  // Tool data - this would ideally come from a database or JSON file
-  const tools = [
-    { name: 'Unix Timestamp Converter', url: 'unix-timestamp', category: 'Date & Time' },
-    { name: 'Date Difference Calculator', url: 'date-difference', category: 'Date & Time' },
-    { name: 'World Clock', url: 'world-clock', category: 'Date & Time' },
-    { name: 'Time Zone Converter', url: 'timezone-converter', category: 'Date & Time' },
-    { name: 'Case Converter', url: 'case-converter', category: 'Text Tools' },
-    { name: 'Text Diff Checker', url: 'text-diff', category: 'Text Tools' },
-    { name: 'Character Count', url: 'character-count', category: 'Text Tools' },
-    { name: 'Lorem Ipsum Generator', url: 'lorem-ipsum', category: 'Text Tools' },
-    { name: 'Unit Converter', url: 'unit-converter', category: 'Converters' },
-    { name: 'Base64 Encoder/Decoder', url: 'base64-encoder', category: 'Encoders & Decoders' },
-    { name: 'JSON Formatter', url: 'json-formatter', category: 'Developer Tools' },
-    { name: 'HTML Encoder/Decoder', url: 'html-encoder', category: 'Encoders & Decoders' },
-    { name: 'CSS Minifier', url: 'css-minifier', category: 'Developer Tools' },
-    { name: 'Color Picker', url: 'color-picker', category: 'Design Tools' },
-    { name: 'Number Base Converter', url: 'number-base-converter', category: 'Converters' },
-    { name: 'Password Generator', url: 'password-generator', category: 'Utilities' },
-    { name: 'Image Compressor', url: 'image-compressor', category: 'Utilities' },
-    { name: 'Markdown Editor', url: 'markdown-editor', category: 'Utilities' },
-  ];
-
-  // Handle search button click
-  searchButton.addEventListener('click', function (e) {
-    performSearch();
-  });
-
-  // Handle Enter key press in search input
-  searchInput.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-      performSearch();
-    }
-  });
-
-  // Perform the search and navigate to the tool if found
-  function performSearch() {
-    const query = searchInput.value.trim().toLowerCase();
-    if (query.length < 2) return; // Require at least 2 characters
-
-    // Find matching tools
-    const matches = tools.filter(tool =>
-      tool.name.toLowerCase().includes(query) ||
-      tool.category.toLowerCase().includes(query)
-    );
-
-    if (matches.length === 1) {
-      // If exactly one match, go directly to that tool
-      window.location.href = matches[0].url;
-    } else if (matches.length > 1) {
-      // If multiple matches, go to the first one
-      // In a real implementation, you might show a dropdown of results instead
-      window.location.href = matches[0].url;
-    } else {
-      // No matches found
-      showToast('No matching tools found. Try a different search term.', "error");
-    }
-  }
-}
-
-const init = () => {
-  initSearchFunctionality();
-}
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faLayerGroup } from "@fortawesome/free-solid-svg-icons";
+import ToolCard from "../components/ToolCard";
+import AdUnit from "../components/AdUnit";
+import { tools } from "../data/tools";
 
 export default function Home() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredTools, setFilteredTools] = useState([]);
+
+
   useEffect(() => {
-    init();
+    setFilteredTools(tools);
   }, []);
+
+  const handleSearch = (e) => {
+    const term = e.target.value.toLowerCase();
+    setSearchTerm(term);
+
+    const filtered = tools.filter(tool =>
+      tool.name.toLowerCase().includes(term) ||
+      tool.category.toLowerCase().includes(term)
+    );
+    setFilteredTools(filtered);
+  };
+
+
   return (
     <>
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>DailyTools - Free Online Utility Tools</title>
-        <meta name="description" content="Free online utility tools for everyday tasks. Convert timestamps, format code, calculate dates, and more. No ads, no signup required." />
-        <meta name="keywords" content="online tools, web tools, utility tools, free tools, unix timestamp, date calculator, text tools" />
-        <meta name="author" content="DailyTools" />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="DailyTools - Free Online Utility Tools" />
-        <meta property="og:description" content="Free online utility tools for everyday tasks. Convert timestamps, format code, calculate dates, and more." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tools-daily.com/" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="DailyTools - Free Online Utility Tools" />
-        <meta name="twitter:description" content="Free online utility tools for everyday tasks. Convert timestamps, format code, calculate dates, and more." />
-        <link rel="canonical" href="https://tools-daily.com/" />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon"></link>
+        <title>DailyTools - Cyberpunk Utilities</title>
+        <meta name="description" content="Next-gen simple, fast, and reliable utilities. No ads, no signup." />
       </Head>
+
+      <div className="background-grid"></div>
+
+
+      {/* Header is handled by Layout in _app.js */}
+
+
       <main>
-        <div className="container">
-          {/* <!-- Ad Space: Top Banner -->
-          <div className="ad-container ad-horizontal">
-            <div className="ad-placeholder">
-              <p>Advertisement</p>
-              <p className="ad-size">728x90</p>
-            </div>
-          </div> */}
+        <section className={`hero ${searchTerm ? 'search-mode' : ''}`}>
+          <div className="hero-content">
+            {!searchTerm && (
+              <>
+                <h2>The Future of Web Tools</h2>
+                <p>Powerful utilities for developers and designers. Fast, privacy-focused, and free.</p>
+              </>
+            )}
 
-          <section className="hero">
-            <div className="hero-content">
-              <h2>Free Online Tools for Everyday Tasks</h2>
-              <p>Simple, fast, and reliable utilities to help you with your daily work. No ads, no signup required.</p>
-              <p>DailyTools offers a wide range of free online tools designed to simplify your everyday tasks. From converting timestamps and formatting code to calculating dates and generating passwords, our tools are designed to be easy to use and accessible to everyone. With no ads or signup required, you can focus on getting your work done quickly and efficiently.</p>
-              <div className="search-container">
-                <div className="form">
-                  <input id="search-tools" type="text" name="q" placeholder="Search for a tool..." aria-label="Search for a tool" />
-                  <button id="search-button" aria-label="Search"><i><FontAwesomeIcon icon={faSearch} /></i></button>
-                </div>
+            <div className={`search-container ${searchTerm ? 'active' : ''}`}>
+              <input
+                type="text"
+                placeholder="Search tools (e.g., 'json', 'time')..."
+                value={searchTerm}
+                onChange={handleSearch}
+                autoFocus
+              />
+              <button className="search-button">
+                <FontAwesomeIcon icon={faSearch} />
+              </button>
+            </div>
+
+            {searchTerm && (
+              <div className="search-results-grid">
+                {filteredTools.length > 0 ? (
+                  filteredTools.map((tool, index) => (
+                    <ToolCard key={index} tool={tool} />
+                  ))
+                ) : (
+                  <p className="no-results">No tools found matching "{searchTerm}"</p>
+                )}
               </div>
-            </div>
-          </section>
+            )}
+          </div>
+        </section>
 
-          <section className="tool-categories">
-            <h2>Popular Tool Categories</h2>
-            <div className="category-grid">
-              <div className="category-card">
-                <div className="category-icon">
-                  <i><FontAwesomeIcon icon={faClock} /></i>
-                </div>
-                <h3>Date & Time</h3>
-                <ul>
-                  <li><Link href="/unix-timestamp">Unix Timestamp Converter</Link></li>
-                  <li><Link href="/date-difference">Date Difference Calculator</Link></li>
-                  <li><Link href="/world-clock">World Clock</Link></li>
-                  <li><Link href="/timezone-converter">Time Zone Converter</Link></li>
-                </ul>
-                <Link href="/date-time-tools" className="view-all">View All <i><FontAwesomeIcon icon={faArrowRight} /></i></Link>
+        <div className="container" id="all-tools">
+          <AdUnit slot="1234567890" style={{ height: '90px' }} />
+
+          {!searchTerm && (
+            <>
+              <div className="tool-grid">
+                {filteredTools.map((tool, index) => (
+                  <ToolCard key={index} tool={tool} />
+                ))}
               </div>
-
-              <div className="category-card">
-                <div className="category-icon">
-                  <i><FontAwesomeIcon icon={faFont} /></i>
-                </div>
-                <h3>Text Tools</h3>
-                <ul>
-                  <li><Link href="/case-converter">Case Converter</Link></li>
-                  <li><Link href="/text-diff">Text Diff Checker</Link></li>
-                  <li><Link href="/character-count">Character Count</Link></li>
-                  <li><Link href="/lorem-ipsum">Lorem Ipsum Generator</Link></li>
-                </ul>
-                <Link href="/text-tools" className="view-all">View All <i><FontAwesomeIcon icon={faArrowRight} /></i></Link>
-              </div>
-
-              <div className="category-card">
-                <div className="category-icon">
-                  <i><FontAwesomeIcon icon={faExchangeAlt} /></i>
-                </div>
-                <h3>Converters</h3>
-                <ul>
-                  <li><Link href="/unit-converter">Unit Converter</Link></li>
-                  <li><Link href="/base64-encoder">Base64 Encoder/Decoder</Link></li>
-                  <li><Link href="/json-formatter">JSON Formatter</Link></li>
-                  <li><Link href="/number-base-converter">Number Base Converter</Link></li>
-                </ul>
-                <Link href="/converter-tools" className="view-all">View All <i><FontAwesomeIcon icon={faArrowRight} /></i></Link>
-              </div>
-
-              <div className="category-card">
-                <div className="category-icon">
-                  <i><FontAwesomeIcon icon={faCode} /></i>
-                </div>
-                <h3>Web Development</h3>
-                <ul>
-                  <li><Link href="/html-encoder">HTML Encoder/Decoder</Link></li>
-                  <li><Link href="/css-minifier">CSS Minifier</Link></li>
-                  <li><Link href="/color-picker">Color Picker</Link></li>
-                  <li><Link href="/regex-tester">Regex Tester</Link></li>
-                </ul>
-                <Link href="/web-dev-tools" className="view-all">View All <i><FontAwesomeIcon icon={faArrowRight} /></i></Link>
-              </div>
-            </div>
-          </section>
-
-          <section className="featured-tools">
-            <h2>Featured Tools</h2>
-            <div className="featured-grid">
-              <Link href="/unix-timestamp" className="featured-card">
-                <div className="featured-icon">
-                  <i><FontAwesomeIcon icon={faClock} /></i>
-                </div>
-                <h3>Unix Timestamp Converter</h3>
-                <p>Convert between Unix timestamps and human-readable dates. Includes current timestamp, date conversion, and timestamp operations.</p>
-              </Link>
-
-              <Link href="/json-formatter" className="featured-card">
-                <div className="featured-icon">
-                  <i><FontAwesomeIcon icon={faCode} /></i>
-                </div>
-                <h3>JSON Formatter</h3>
-                <p>Format, validate, and beautify JSON data. Minify JSON for production or expand it for readability.</p>
-              </Link>
-
-              <Link href="/base64-encoder" className="featured-card">
-                <div className="featured-icon">
-                  <i><FontAwesomeIcon icon={faExchangeAlt} /></i>
-                </div>
-                <h3>Base64 Encoder/Decoder</h3>
-                <p>Encode text to Base64 or decode Base64 to text. Supports file encoding and URL-safe Base64.</p>
-              </Link>
-            </div>
-          </section>
-
-          <section className="recent-tools">
-            <h2>Recently Added Tools</h2>
-            <div className="recent-grid">
-              <Link href="/color-picker" className="recent-card">
-                <h3>Color Picker <span className="new-badge">New</span></h3>
-                <p>Interactive color picker with RGB, HEX, HSL, and CMYK values. Save your color palettes.</p>
-              </Link>
-
-              <Link href="/markdown-editor" className="recent-card">
-                <h3>Markdown Editor <span className="new-badge">New</span></h3>
-                <p>Live markdown editor with preview and export options. Perfect for README files.</p>
-              </Link>
-
-              <Link href="/password-generator" className="recent-card">
-                <h3>Password Generator <span className="new-badge">New</span></h3>
-                <p>Generate secure, random passwords with customizable options.</p>
-              </Link>
-
-              <Link href="/image-compressor" className="recent-card">
-                <h3>Image Compressor <span className="new-badge">New</span></h3>
-                <p>Compress and resize images for web use without losing quality.</p>
-              </Link>
-            </div>
-          </section>
-
-          {/* <!-- Ad Space: Bottom Banner -->
-          <div className="ad-container ad-horizontal">
-            <div className="ad-placeholder">
-              <p>Advertisement</p>
-              <p className="ad-size">728x90</p>
-            </div>
-          </div> */}
+              <AdUnit slot="0987654321" style={{ height: '250px', marginTop: '50px' }} />
+            </>
+          )}
         </div>
+
+        <section id="about" className="container mt-20 text-center glass-panel" style={{ padding: '50px', marginTop: '100px' }}>
+          <h3><FontAwesomeIcon icon={faLayerGroup} /> About DailyTools</h3>
+          <p style={{ maxWidth: '600px', margin: '20px auto' }}>
+            We provide high-quality, free-to-use tools for everyday tasks.
+            Whether you need to convert data, format code, or edit text, we have you covered.
+          </p>
+        </section>
       </main>
+
+
+      {/* Footer is handled by Layout in _app.js */}
+
     </>
   );
 }

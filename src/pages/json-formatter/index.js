@@ -1,7 +1,11 @@
-import Head from 'next/head';
 import { useState } from 'react';
-import styles from './JsonFormatter.module.css';
+import Head from 'next/head';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy, faDownload, faTrash } from "@fortawesome/free-solid-svg-icons";
 import SEO from '../../components/SEO';
+import AdUnit from '../../components/AdUnit';
+import FAQ from '../../components/SEO/FAQ';
+import SchemaOrg from '../../components/SEO/SchemaOrg';
 
 export default function JsonFormatter() {
   const [json, setJson] = useState('');
@@ -15,6 +19,10 @@ export default function JsonFormatter() {
 
   const formatJson = () => {
     try {
+      if (!json.trim()) {
+        setError('Please enter some JSON to format.');
+        return;
+      }
       const parsedJson = JSON.parse(json);
       const formatted = JSON.stringify(parsedJson, null, 2);
       setFormattedJson(formatted);
@@ -25,54 +33,23 @@ export default function JsonFormatter() {
     }
   };
 
-  return (
-    <>
-      <SEO
-        title="JSON Formatter - DailyTools"
-        description="Format and validate JSON data easily."
-        keywords="json formatter, json validator, format json, json beautifier"
-      />
-      <main>
-        <div className="container">
-          <h1>JSON Formatter</h1>
-          <p>JSON (JavaScript Object Notation) is a lightweight data-interchange format that is easy for humans to read and write and easy for machines to parse and generate. Formatting JSON makes it more readable and helps in debugging by structuring the data clearly with proper indentation.</p>
-          <p>Using a JSON formatter offers several benefits, including improved readability, easier debugging, and enhanced collaboration. By presenting JSON data in a structured and organized manner, it becomes simpler to identify errors, understand complex data structures, and share information with others.</p>
-          <p>This tool validates your JSON data and formats it into a clean, indented structure. If the JSON is invalid, it will display an error message.</p>
-          <p><strong>How to use:</strong> Paste your raw JSON data into the text area below and click the &quot;Format JSON&quot; button. The formatted JSON (or an error message) will appear below. You can then copy the formatted JSON to your clipboard or save it as a file.</p>
+  const clearAll = () => {
+    setJson('');
+    setFormattedJson('');
+    setError('');
+  };
 
-          <textarea
-            className={styles.input}
-            placeholder="Enter your JSON data here"
-            value={json}
-            onChange={handleInputChange}
-          />
+  const copyJson = async () => {
+    try {
+      await navigator.clipboard.writeText(formattedJson);
+      alert('JSON copied to clipboard!');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+      alert('Failed to copy JSON to clipboard: ' + err.message);
+    }
+  };
 
-          <button onClick={formatJson} className={styles.formatButton}>
-            Format JSON
-          </button>
-
-          {error && <div className={styles.error}>Error: {error}</div>}
-
-          {formattedJson && (
-            <div className={styles.result}>
-              Formatted JSON:
-              <pre className={styles.formattedJson}>{formattedJson}</pre>
-              <div className={styles.buttonContainer}>
-                <button onClick={saveJson} className={styles.saveButton}>
-                  Save JSON
-                </button>
-                <button onClick={copyJson} className={styles.copyButton}>
-                  Copy JSON
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-      </main>
-    </>
-  );
-
-  function saveJson() {
+  const saveJson = () => {
     const blob = new Blob([formattedJson], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -82,15 +59,138 @@ export default function JsonFormatter() {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-  }
+  };
 
-  async function copyJson() {
-    try {
-      await navigator.clipboard.writeText(formattedJson);
-      alert('JSON copied to clipboard!');
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-      alert('Failed to copy JSON to clipboard: ' + err.message);
+  const faqData = [
+    {
+      question: "What is JSON?",
+      answer: "JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write and easy for machines to parse and generate."
+    },
+    {
+      question: "Why should I use a JSON Formatter?",
+      answer: "Raw JSON data is often minified (compressed) to save space, making it hard to read. A JSON Formatter beautifies this data with proper indentation and spacing, making it easier to debug and understand."
+    },
+    {
+      question: "Is my data safe?",
+      answer: "Yes, all formatting is done client-side in your browser. Your data is never sent to our servers."
     }
-  }
+  ];
+
+  const schemaData = {
+    name: "JSON Formatter & Validator",
+    description: "Free online JSON formatter and validator. Beautify, debug, and validate your JSON data securely in your browser.",
+    applicationCategory: "DeveloperApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD"
+    }
+  };
+
+  return (
+    <>
+      <SEO
+        title="JSON Formatter & Validator - Free Online Tool | DailyTools"
+        description="Format, validate, and beautify your JSON data with our free online JSON Formatter. Secure, client-side processing with syntax highlighting and error detection."
+        keywords="json formatter, json validator, json beautifier, online json tool, debug json, format json"
+      />
+      <SchemaOrg type="SoftwareApplication" data={schemaData} />
+
+      <main className="tool-dashboard container">
+        <div className="tool-main">
+          <article className="tool-section">
+            <h1>JSON Formatter & Validator</h1>
+            <p className="tool-description">
+              Paste your JSON code below to format, validate, and beautify it.
+              This tool runs entirely in your browser, so your data remains secure.
+            </p>
+
+            <AdUnit slot="1234567890" style={{ marginBottom: '20px', height: '90px' }} />
+
+            <div className="tool-panel">
+              <div className="input-group">
+                <textarea
+                  placeholder="Paste your JSON here..."
+                  value={json}
+                  onChange={handleInputChange}
+                  style={{ minHeight: '200px', fontFamily: 'monospace' }}
+                  aria-label="JSON Input"
+                ></textarea>
+              </div>
+
+              <div className="input-group" style={{ justifyContent: 'space-between' }}>
+                <div>
+                  <button onClick={formatJson} className="btn">Format JSON</button>
+                  <button onClick={clearAll} className="btn" style={{ background: 'rgba(255,255,255,0.1)', marginLeft: '10px' }}>
+                    <FontAwesomeIcon icon={faTrash} /> Clear
+                  </button>
+                </div>
+              </div>
+
+              {error && (
+                <div className="result-container" style={{ borderColor: '#ff4d4d', background: 'rgba(255, 77, 77, 0.1)', marginTop: '20px' }}>
+                  <p style={{ color: '#ff4d4d', margin: 0 }}><strong>Error:</strong> {error}</p>
+                </div>
+              )}
+
+              {formattedJson && (
+                <div className="tool-panel" style={{ marginTop: '30px', animation: 'fadeIn 0.5s' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+                    <h3>Formatted Result</h3>
+                    <div>
+                      <button onClick={copyJson} className="btn-copy" title="Copy to clipboard">
+                        <FontAwesomeIcon icon={faCopy} />
+                      </button>
+                      <button onClick={saveJson} className="btn-copy" title="Download JSON">
+                        <FontAwesomeIcon icon={faDownload} />
+                      </button>
+                    </div>
+                  </div>
+                  <pre
+                    className="result-value"
+                    style={{
+                      textAlign: 'left',
+                      overflowX: 'auto',
+                      padding: '15px',
+                      background: 'rgba(0,0,0,0.3)',
+                      borderRadius: '8px'
+                    }}
+                  >
+                    {formattedJson}
+                  </pre>
+                </div>
+              )}
+            </div>
+
+            <div className="tool-info">
+              <h2>How to use the JSON Formatter</h2>
+              <ol style={{ marginLeft: '20px', color: 'var(--text-muted)', lineHeight: '1.8' }}>
+                <li>Paste your raw (minified) JSON data into the input box above.</li>
+                <li>Click the <strong>Format JSON</strong> button.</li>
+                <li>If your JSON is valid, the beautified version will appear below.</li>
+                <li>If there are errors, a red message will indicate what went wrong.</li>
+                <li>Use the Copy or Download buttons to save your formatted data.</li>
+              </ol>
+            </div>
+
+            <FAQ questions={faqData} />
+          </article>
+        </div>
+
+        <aside className="tool-sidebar">
+          <div className="glass-panel" style={{ padding: '20px', marginBottom: '30px' }}>
+            <h3>Related Tools</h3>
+            <ul style={{ listStyle: 'none' }}>
+              <li style={{ marginBottom: '10px' }}><a href="/xml-formatter">XML Formatter</a></li>
+              <li style={{ marginBottom: '10px' }}><a href="/html-encoder">HTML Encoder</a></li>
+              <li style={{ marginBottom: '10px' }}><a href="/base64-encoder">Base64 Encoder</a></li>
+              <li style={{ marginBottom: '10px' }}><a href="/yaml-to-json">YAML to JSON</a></li>
+            </ul>
+          </div>
+          <AdUnit slot="9876543210" format="vertical" style={{ height: '600px' }} />
+        </aside>
+      </main>
+    </>
+  );
 }

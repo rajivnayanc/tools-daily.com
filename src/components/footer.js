@@ -1,30 +1,16 @@
 import { faGithub, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { useEffect } from "react";
-
-/**
- * Update copyright year in footer
- */
-const updateCopyrightYear = () => {
-  const currentYearEl = document.getElementById('current-year');
-  if (currentYearEl) {
-    currentYearEl.textContent = new Date().getFullYear();
-  }
-}
 
 const Footer = () => {
-  useEffect(() => {
-    updateCopyrightYear();
-  }, []);
-
-  return <footer>
-    <div className="container">
-      <div className="footer-content">
+  return (
+    <footer>
+      <div className="container footer-content">
         <div className="footer-section">
           <h3>Daily<span>Tools</span></h3>
-          <p>Free online tools for everyday tasks.</p>
-          <div className="social-links">
+          <p>Free online tools for everyday tasks. Built with &hearts; for developers.</p>
+          <div className="social-links" style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
+            {/* Using colors directly for icons as they might be inside a dark footer */}
             <Link target="_blank" href="https://twitter.com/rajivnayanc" aria-label="Follow us on Twitter"><i aria-hidden="true"><FontAwesomeIcon icon={faTwitter} /></i></Link>
             <Link target="_blank" href="https://github.com/rajivnayanc" aria-label="Follow us on GitHub"><i aria-hidden="true"><FontAwesomeIcon icon={faGithub} /></i></Link>
             <Link target="_blank" href="https://www.linkedin.com/in/rajivnayanc" aria-label="Follow us on LinkedIn"><i aria-hidden="true"><FontAwesomeIcon icon={faLinkedin} /></i></Link>
@@ -46,15 +32,14 @@ const Footer = () => {
             <li><Link href="/unix-timestamp">Unix Timestamp</Link></li>
             <li><Link href="/json-formatter">JSON Formatter</Link></li>
             <li><Link href="/base64-encoder">Base64 Encoder</Link></li>
-            <li><Link href="/text-case-converter">Text Case Converter</Link></li>
           </ul>
         </div>
       </div>
-      <div className="copyright">
-        <p>&copy; <span id="current-year">2025</span> DailyTools. All rights reserved.</p>
+      <div className="copyright" style={{ textAlign: 'center', marginTop: '40px', padding: '20px', borderTop: '1px solid rgba(255,255,255,0.1)', color: '#888' }}>
+        <p>&copy; {new Date().getFullYear()} DailyTools. All rights reserved.</p>
       </div>
-    </div>
-  </footer>
+    </footer>
+  );
 }
 
 export default Footer;
